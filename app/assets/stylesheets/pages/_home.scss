@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+.flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between
+}
+
+body {
+  min-height: 100vh;
+  background-color: white;
+}
+
+.home-grid {
+  // background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(asset_path("matt-lamers-SPbcqTVoYqE-unsplash.jpg"));
+  // background-size: cover;
+  height: 100vh;
+  // color: #eee;
+  text-align: left;
+  padding-top: 14vh;
+}
+
