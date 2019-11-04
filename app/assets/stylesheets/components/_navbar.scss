@@ -1,15 +1,9 @@
-// .navbar-lewagon {
-//   justify-content: space-between;
-//   background: white;
-// }
-
-// .navbar-lewagon .navbar-collapse {
-//   flex-grow: 0;
-// }
-
-// .navbar-lewagon .navbar-brand img {
-//   width: 40px;
-// }
+#logo {
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  font-size: 36px;
+  margin: 4px;
+  color: $light-blue;
+}
 
 .navbar {
   box-shadow: none;
