@@ -1,16 +1,33 @@
 .home-main-tile {
   vertical-align: bottom;
   height: 60vh;
-  border: 1px solid $light-gray;
-  padding: 5px;
+  // border: 1px solid $light-gray;
+  padding: 20px;
   // margin: 2px;
   border-radius: 10px;
   align-self: flex-end;
+  z-index: 1;
+  background-color: $light-blue;
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .home-secondary-tile {
-  border: 1px solid $light-gray;
-  padding: 5px;
+  // border: 1px solid $light-gray;
+  height: 18vh;
+  padding: 20px;
   // margin: 2px;
   border-radius: 10px;
+  z-index: 1;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-left: 2px;
+  min-width: 32%;
+}
+
+.algorithm-icon {
+  font-size: 42px;
+  margin-bottom: 12px;
+  color: $light-blue;
+  opacity: 0.7;
 }

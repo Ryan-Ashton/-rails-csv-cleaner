@@ -22,12 +22,6 @@ ActiveRecord::Schema.define(version: 2019_11_05_041030) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "documents", force: :cascade do |t|
-    t.string "file"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "feedbacks", force: :cascade do |t|
     t.integer "rating"
     t.text "comments"
@@ -60,6 +54,10 @@ ActiveRecord::Schema.define(version: 2019_11_05_041030) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "profession"
+    t.string "location"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
