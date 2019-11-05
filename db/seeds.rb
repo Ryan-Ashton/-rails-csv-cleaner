@@ -5,9 +5,9 @@ Session.destroy_all
 Feedback.destroy_all
 
 puts "creating users!"
-user_1 = User.create(email: "testing@test.com", password:"password")
-user_2 = User.create(email: "test@test.com", password:"password")
-user_3 = User.create(email: "testme@test.com", password:"password")
+user_1 = User.create(email: "testing@test.com", password:"password", first_name: "Bob", last_name: "The Builder", profession: "Builder", location: "Britain")
+user_2 = User.create(email: "test@test.com", password:"password", first_name: "Richard", last_name: "Branson", profession: "CEO", location: "Britain")
+user_3 = User.create(email: "testme@test.com", password:"password", first_name: "Ted", last_name: "Talk", profession: "Speaker", location: "USA")
 
 puts "creating algorithms"
 truncate_data = Algorithm.create(name:"Truncate Data", description: "This will remove random empty rows from dataset")
