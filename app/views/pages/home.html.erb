@@ -37,6 +37,15 @@
     </div>
   </div>
   <div class="row">
+  <div>
+  <%= simple_form_for(@session) do |f| %>
+  <!-- [...] -->
+  <%= f.input :file %>
+  <%= f.input :file_cache, as: :hidden %>
+    <%= f.button :submit, class: "btn-primary" %>
 
+  <!-- [...] -->
+  <% end %>
+  </div>
   </div>
 </div>
