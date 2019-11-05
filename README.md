@@ -21,14 +21,7 @@ Users should be able to do the following:
   - Type of uploads
   - Visuals
   - Most common algorithms selected (amongst all users)
--As a logged out user I can only see:
-  - Only show date
-  - Type of upload (algorithm used)
-  - blurred visual / other details available to logged-in users
-
 - As a logged in user, I can review how the algorithm performed with number of stars and comments
 - As a user I expect my file to be removed from the server
-- As a logged out user I can process a file that's less than 100 rows
-- As a logged in user I can process files greater than 100 rows
 - As a logged in user I can receieve an email notification when it is done
 
