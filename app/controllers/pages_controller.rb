@@ -3,7 +3,9 @@ class PagesController < ApplicationController
 
   def home
     @files_counter = Session.all.length
-    @session = Session.new
   end
 
+  def dashboard
+    @session = Session.new
+  end
 end
