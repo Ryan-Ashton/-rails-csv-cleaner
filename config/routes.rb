@@ -7,7 +7,7 @@
 #   get 'algorithms/index'
 #   get 'algorithms/show'
 #   get 'algorithms/new'
-#   get 'sessions/create'
+#   get 'tasks/create'
 #   get 'features', to: "pages#features", as: :features
 #   get 'faq', to: "pages#faq", as: :faq
 #   devise_for :users
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'features', to: "pages#features", as: :features
   get 'faq', to: "pages#faq", as: :faq
   get 'dashboard', to: "pages#dashboard", as: :dashboard
-  resources :sessions , only: [:create, :index, :show] do
+  resources :tasks , only: [:create, :index, :show] do
     resources :feedbacks
   end
   resources :algorithms, only: [:index, :show]

@@ -1,6 +1,6 @@
-class CreateSessions < ActiveRecord::Migration[5.2]
+class CreateTasks < ActiveRecord::Migration[5.2]
   def change
-    create_table :sessions do |t|
+    create_table :tasks do |t|
       t.string :title
       t.references :user, foreign_key: true
       t.references :algorithm, foreign_key: true
