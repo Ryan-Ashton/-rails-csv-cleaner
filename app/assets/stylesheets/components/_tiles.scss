@@ -5,7 +5,7 @@
   padding: 20px;
   // margin: 2px;
   border-radius: 10px;
-  align-self: flex-end;
+  align-self: flex-start;
   z-index: 1;
   background-color: $light-blue;
   color: white;
@@ -25,9 +25,28 @@
   min-width: 32%;
 }
 
+.home-secondary-tile:hover {
+  background-color: rgba(21,170,191,0.1);
+}
+
 .algorithm-icon {
   font-size: 42px;
   margin-bottom: 12px;
   color: $light-blue;
   opacity: 0.7;
 }
+
+.tile-body {
+  // border: 1px solid $light-gray;
+  height: 18vh;
+  padding: 20px;
+  // margin: 2px;
+  border-radius: 10px;
+  z-index: 1;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-left: 2px;
+  min-width: 32%;
+  opacity: 0.5;
+}
+
