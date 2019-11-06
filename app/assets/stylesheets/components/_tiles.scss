@@ -26,6 +26,12 @@
 }
 
 .home-secondary-tile:hover {
+  background-color: #054a91;
+  opacity: 0.8;
+  color: white;
+}
+
+.home-secondary-tile.active {
   background-color: rgba(21,170,191,0.1);
 }
 
@@ -36,23 +42,40 @@
   opacity: 0.7;
 }
 
+.algorithm-icon:hover {
+  color: white;
+}
+
 .tile-body {
   // border: 1px solid $light-gray;
-  display: flex;
-  flex-grow: 1;
+  // display: flex;
+  // flex-grow: 1;
   height: 18vh;
   padding: 20px;
   margin: 4px 0;
-  text-align: center;
+  // text-align: center;
   border-radius: 10px;
   z-index: 1;
-  background-color: white;
+  background-color: #f4f4f4;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 100%;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 // .collapse.show {
 //   width: 100%;
 // }
 
+.upload {
+  font-size: 14px;
+  color: #15aabf;
+  width: 20%;
+  height: 20%;
+  margin: 0 0 0 5%;
+  text-align: center;
+}
+
+.upload > i {
+  font-size: 24px;
+  color: #15aabf;
+}
