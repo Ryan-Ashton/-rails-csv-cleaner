@@ -38,15 +38,21 @@
 
 .tile-body {
   // border: 1px solid $light-gray;
+  display: flex;
+  flex-grow: 1;
   height: 18vh;
   padding: 20px;
-  // margin: 2px;
+  margin: 4px 0;
+  text-align: center;
   border-radius: 10px;
   z-index: 1;
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-left: 2px;
-  min-width: 32%;
+  width: 100%;
   opacity: 0.5;
 }
+
+// .collapse.show {
+//   width: 100%;
+// }
 
