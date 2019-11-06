@@ -6,7 +6,7 @@
       <h1 id="home-header">Let us handle those messy files for you</h1>
     </div>
     <div class="col-6 text-right"> <!-- How to make it invisible on the sm device -->
-      <h2 id="csv-counter"><%#= @files_counter %></h2>#67598
+      <h2 id="csv-counter">#67598<%#= @files_counter %></h2>
       <p>CSV files have been cleaned to date</p>
     </div>
   </div>
@@ -40,22 +40,25 @@
       <div class="row">
         <div class="col-12">
           <div class="collapse multi-collapse" id="truncate_collapse">
-            <div class="tile-body">
-              This algorithm will remove random empty rows from dataset
+            <div class="d-flex tile-body align-items-start">
+              <p>This algorithm will remove random empty rows from dataset</p>
+              <%= render 'shared/upload_icon' %>
             </div>
           </div>
         </div>
         <div class="col-12">
           <div class="collapse multi-collapse" id="headerspaces_collapse">
-            <div class="tile-body">
-              This algorithm will remove spaces out of the headers.
+            <div class="d-flex tile-body align-items-start">
+              <p>This algorithm will remove spaces out of the headers.</p>
+              <%= render 'shared/upload_icon' %>
             </div>
           </div>
         </div>
         <div class="col-12">
           <div class="collapse multi-collapse" id="newlines_collapse">
-            <div class="tile-body">
-              This algorithm will remove new lines out of a cell.
+            <div class="d-flex tile-body align-items-start">
+              <p>This algorithm will remove new lines out of a cell.</p>
+              <%= render 'shared/upload_icon' %>
             </div>
           </div>
         </div>
@@ -83,22 +86,25 @@
       <div class="row">
         <div class="col-12">
           <div class="collapse multi-collapse" id="overunder_collapse">
-            <div class="tile-body">
-              This algorithm will repeatedly move the 2nd row into a new 2nd column.
+            <div class="d-flex tile-body align-items-start">
+              <p>This algorithm will repeatedly move the 2nd row into a new 2nd column.</p>
+              <%= render 'shared/upload_icon' %>
             </div>
           </div>
         </div>
         <div class="col-12">
           <div class="collapse multi-collapse" id="report_collapse">
-            <div class="tile-body">
-              This algorithm will rearrange your report into a dataset you can model from.
+            <div class="d-flex tile-body align-items-start">
+              <p>This algorithm will rearrange your report into a dataset you can model from.</p>
+              <%= render 'shared/upload_icon' %>
             </div>
           </div>
         </div>
         <div class="col-12">
           <div class="collapse multi-collapse" id="column_collapse">
-            <div class="tile-body">
-              This algorithm will take what is in one column and split it out into seperate columns by a seperator.
+            <div class="d-flex tile-body align-items-start">
+              <p>This algorithm will take what is in one column and split it out into seperate columns by a seperator.</p>
+              <%= render 'shared/upload_icon' %>
             </div>
           </div>
         </div>
@@ -126,15 +132,17 @@
       <div class="row">
         <div class="col-12">
           <div class="collapse multi-collapse" id="symbol_collapse">
-            <div class="tile-body">
-              Data often gets messy by adding random symbols in the cells, this algorithm will remove all of that and just keep the text.
+            <div class="d-flex tile-body align-items-start">
+              <p>Data often gets messy by adding random symbols in the cells, this algorithm will remove all of that and just keep the text.</p>
+              <%= render 'shared/upload_icon' %>
             </div>
           </div>
         </div>
         <div class="col-12">
           <div class="collapse multi-collapse" id="whitespace_collapse">
-            <div class="tile-body">
-              If you have white space around the data in the columns, this algorithm will remove it.
+            <div class="d-flex tile-body align-items-start">
+              <p>If you have white space around the data in the columns, this algorithm will remove it.</p>
+              <%= render 'shared/upload_icon' %>
             </div>
           </div>
         </div>
