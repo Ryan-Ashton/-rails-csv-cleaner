@@ -1,6 +1,4 @@
-require 'csv'
-class SessionsController < ApplicationController
-  
+class TasksController < ApplicationController
   def index
 
   end
@@ -11,12 +9,12 @@ class SessionsController < ApplicationController
   
   def create
     
-    @session = Session.new(session_params)
+    @task = Task.new(task_params)
     # byebug
-    @session.user = current_user
+    @task.user = current_user
 
     # Placeholder algorithm
-    @session.algorithm = Algorithm.first
+    @task.algorithm = Algorithm.first
 
     # path = params["file"].tempfile
 
@@ -41,13 +39,13 @@ class SessionsController < ApplicationController
 
     # make the user download it
 
-    @session.save!
+    @task.save!
     # respond_to do |format|
-    #   format.html { redirect_to sessions_path }
-    #   format.json { render json: @session.to_json }
+    #   format.html { redirect_to tasks_path }
+    #   format.json { render json: @task.to_json }
     # end
     respond_to do |format|
-      format.json{ render :json => @session }
+      format.json{ render :json => @task }
     end
 
   end
@@ -57,7 +55,7 @@ class SessionsController < ApplicationController
 
   private
 
-  def session_params
+  def task_params
     params.permit(:file)
   end
 end

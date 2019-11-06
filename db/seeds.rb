@@ -1,7 +1,7 @@
 puts "destroying old seeds!"
 User.destroy_all
 Algorithm.destroy_all
-Session.destroy_all
+Task.destroy_all
 Feedback.destroy_all
 
 puts "creating users!"
@@ -26,23 +26,23 @@ symbols_around_data = Algorithm.create(name:"Remove Unwanted Symbols", descripti
 
 white_space_left_right = Algorithm.create(name:"Clear white spaces left/right", description: "If you have white space around the data in the columns, this will remove it")
 
-puts "creating sessions!"
+puts "creating Tasks!"
 
-sesh_1 = Session.create(title: "my first session", user_id: user_1, algorithm_id: truncate_data)
+sesh_1 = Task.create(title: "my first Task", user_id: user_1, algorithm_id: truncate_data)
 
-sesh_2 = Session.create(title: "my second session", user_id: user_1, algorithm_id: symbols_around_data)
+sesh_2 = Task.create(title: "my second Task", user_id: user_1, algorithm_id: symbols_around_data)
 
-sesh_3 = Session.create(title: "my third session", user_id: user_1, algorithm_id: report_format)
+sesh_3 = Task.create(title: "my third Task", user_id: user_1, algorithm_id: report_format)
 
-sesh_4 = Session.create(title: "my fourth session", user_id: user_1, algorithm_id: new_lines)
+sesh_4 = Task.create(title: "my fourth Task", user_id: user_1, algorithm_id: new_lines)
 
 puts "creating feedback!"
 
-feed1 = Feedback.create(rating: 5, comments: "did a good job, thanks", session_id: sesh_1)
+feed1 = Feedback.create(rating: 5, comments: "did a good job, thanks", task_id: sesh_1)
 
-feed2 = Feedback.create(rating: 4, comments: "Almost there, thanks", session_id: sesh_2)
+feed2 = Feedback.create(rating: 4, comments: "Almost there, thanks", task_id: sesh_2)
 
-feed3 = Feedback.create(rating: 3, comments: "It did OK", session_id: sesh_3)
+feed3 = Feedback.create(rating: 3, comments: "It did OK", task_id: sesh_3)
 
-feed4 = Feedback.create(rating: 5, comments: "Nice!", session_id: sesh_4)
+feed4 = Feedback.create(rating: 5, comments: "Nice!", task_id: sesh_4)
 

@@ -1,3 +1,3 @@
 class Algorithm < ApplicationRecord
-  has_many :sessions
+  has_many :tasks
 end

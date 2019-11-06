@@ -1,3 +1,3 @@
 class Feedback < ApplicationRecord
-  belongs_to :session
+  belongs_to :task
 end

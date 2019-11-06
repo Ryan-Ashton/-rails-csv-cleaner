@@ -3,7 +3,7 @@ class CreateFeedbacks < ActiveRecord::Migration[5.2]
     create_table :feedbacks do |t|
       t.integer :rating
       t.text :comments
-      t.references :session, foreign_key: true
+      t.references :task, foreign_key: true
 
       t.timestamps
     end
