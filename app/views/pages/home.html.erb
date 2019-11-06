@@ -6,7 +6,7 @@
       <h1 id="home-header">Let us handle those messy files for you</h1>
     </div>
     <div class="col-6 text-right"> <!-- How to make it invisible on the sm device -->
-      <h2 id="csv-counter">#67598<%#= @files_counter %></h2>
+      <h2 id="csv-counter"><%#= @files_counter %></h2>#67598
       <p>CSV files have been cleaned to date</p>
     </div>
   </div>
@@ -41,21 +41,21 @@
         <div class="col-12">
           <div class="collapse multi-collapse" id="truncate_collapse">
             <div class="tile-body">
-              Remove random empty rows from dataset
+              This algorithm will remove random empty rows from dataset
             </div>
           </div>
         </div>
         <div class="col-12">
           <div class="collapse multi-collapse" id="headerspaces_collapse">
             <div class="tile-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              This algorithm will remove spaces out of the headers.
             </div>
           </div>
         </div>
         <div class="col-12">
           <div class="collapse multi-collapse" id="newlines_collapse">
             <div class="tile-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              This algorithm will remove new lines out of a cell.
             </div>
           </div>
         </div>
@@ -84,21 +84,21 @@
         <div class="col-12">
           <div class="collapse multi-collapse" id="overunder_collapse">
             <div class="tile-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              This algorithm will repeatedly move the 2nd row into a new 2nd column.
             </div>
           </div>
         </div>
         <div class="col-12">
           <div class="collapse multi-collapse" id="report_collapse">
             <div class="tile-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              This algorithm will rearrange your report into a dataset you can model from.
             </div>
           </div>
         </div>
         <div class="col-12">
           <div class="collapse multi-collapse" id="column_collapse">
             <div class="tile-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              This algorithm will take what is in one column and split it out into seperate columns by a seperator.
             </div>
           </div>
         </div>
@@ -127,14 +127,14 @@
         <div class="col-12">
           <div class="collapse multi-collapse" id="symbol_collapse">
             <div class="tile-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              Data often gets messy by adding random symbols in the cells, this algorithm will remove all of that and just keep the text.
             </div>
           </div>
         </div>
         <div class="col-12">
           <div class="collapse multi-collapse" id="whitespace_collapse">
             <div class="tile-body">
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+              If you have white space around the data in the columns, this algorithm will remove it.
             </div>
           </div>
         </div>
