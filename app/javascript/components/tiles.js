@@ -13,9 +13,9 @@ const initClickedTile = () => {
     tile.addEventListener('click', (e) => {
       const id = e.currentTarget.dataset.id;
       if (id > 6) {
-        document.documentElement.scrollTop = 110;
+        document.documentElement.scrollTo({top: 140, behavior: 'smooth'});
       } else {
-        document.documentElement.scrollTop = 0;
+        document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
       }
 
       const activeTile = document.querySelector('.home-secondary-tile.active');
@@ -29,7 +29,6 @@ const initClickedTile = () => {
         currentTargetPopUp.classList.toggle('active');
         tile.classList.toggle('active');
       }
-
 
     });
   });

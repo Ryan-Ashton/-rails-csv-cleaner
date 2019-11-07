@@ -39,6 +39,15 @@
   opacity: 0.9;
 }
 
+.home-secondary-tile.last-tile {
+  background-color: #F1D97E;
+  color: #95afba;
+}
+
+.last-tile > .algorithm-icon {
+  color: #95afba;
+}
+
 .algorithm-icon {
   font-size: 42px;
   margin-bottom: 12px;
@@ -68,27 +77,4 @@
 
 .tile-body.active {
   display: flex;
-}
-
-.upload {
-  font-size: 14px;
-  color: #15aabf;
-  width: 20%;
-  margin: 0 0 0 5%;
-  text-align: center;
-  opacity: 0.9;
-}
-
-.upload.hover {
-  opacity: 1;
-}
-
-.upload > i {
-  font-size: 24px;
-  color: #15aabf;
-  opacity: 0.9;
-}
-
-.upload > i {
-  opacity: 1;
 }
