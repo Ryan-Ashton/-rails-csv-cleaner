@@ -117,5 +117,28 @@ class FileConverter < ApplicationService
       csv_data
     end
 
+    #######################################################
+
+    def missing_random_data(file_path)
+      clean = CSV.parse(IO.read(file_path), headers: true, skip_blanks: true).delete_if { |row| row.to_hash.values.all?(&:nil?) }
+      
+      lines = []
+    
+      clean.to_a
+    
+      clean.each do |row|
+        lines << row
+      end
+    
+      csv_data = CSV.generate(headers: true) do |csv|
+        lines.each do |line|
+          csv << line
+        end
+      end
+
+      return false unless csv_data
+      csv_data 
+    end
+
 
 end
