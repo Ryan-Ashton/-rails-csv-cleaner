@@ -1,7 +1,8 @@
 require 'csv'
 require 'pry-byebug'
 
-class FileConverter
+class FileConverter < ApplicationService
+
   def initialize(file)
     @file = file
   end
@@ -21,7 +22,8 @@ class FileConverter
       end
     end
 
-    return csv_data
+    return false unless csv_data
+    csv_data
   end
 
 end

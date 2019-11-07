@@ -15,11 +15,12 @@ class TasksController < ApplicationController
 
     # Placeholder algorithm
     # @task.algorithm = Algorithm.first
-    csv_data = FileConverter.new(task_params[:file].tempfile.path).algorithm_1
 
     if @task.save
-      send_data csv_data, filename: "data-#{Date.today.to_s}.csv", disposition: :attachment
+      csv_data = FileConverter.algorithm_1(task_params[:file].tempfile.path)
+      send_data csv_data, filename: task_params[:file].original_filename + "-fixed.csv", disposition: :attachment
     else
+      flash[:alert] = @task.errors.full_messages
       redirect_to dashboard_path
     end
 
