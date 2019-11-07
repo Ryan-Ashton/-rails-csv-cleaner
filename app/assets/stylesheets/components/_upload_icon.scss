@@ -1,0 +1,27 @@
+.upload {
+  font-size: 14px;
+  color: #15aabf;
+  width: 100%;
+  margin: 0 0 0 5%;
+  text-align: center;
+  opacity: 0.9;
+  padding: 4px;
+}
+
+.upload > i {
+  font-size: 24px;
+  color: #15aabf;
+  opacity: 0.9;
+}
+.upload-icon {
+  text-decoration: none;
+}
+
+.upload.hover {
+  opacity: 1;
+}
+
+
+.upload > i {
+  opacity: 1;
+}

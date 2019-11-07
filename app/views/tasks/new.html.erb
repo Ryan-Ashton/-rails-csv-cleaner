@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="extra-container-margin">
+
+  </div>
+  <h1 class="mb-5">Dashboard</h1>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#truncateDataModal">
+    Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="truncateDataModal" tabindex="-1" role="dialog" aria-labelledby="truncateDataModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="navbar">
+          <h2 class="ml-2 my-3">Algorithm: Truncate Data</h2>
+        </div>
+        <div class="modal-header">
+          <div>
+            <%= simple_form_for(@task) do |f| %>
+              <%= f.input :file, class: "my-2" %>
+              <%= f.button :submit, "Run", class: "btn-primary my-3 mr-2" %>
+              <%= f.button :button, "Choose different file", type: "reset", class: "btn-outline-secondary my-3" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary m-3" data-dismiss="modal">Cancel</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
