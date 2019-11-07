@@ -1,7 +1,7 @@
 .home-main-tile {
   vertical-align: bottom;
-  height: 60vh;
-  padding: 20px;
+  min-height: 60vh;
+  padding: 4%;
   border-radius: 10px;
   align-self: flex-start;
   z-index: 1;
@@ -10,13 +10,29 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.tiles-wrapper {
-  height: 60vh;
+.font-size-up {
+  font-size: 20px;
+  // list-style: none;
+  padding-left: 24px;
 }
 
+.security-text {
+  list-style: none;
+  font-size: 18px;
+  padding: 20% 0 0 0;
+}
+
+.security-text a {
+  text-decoration: none;
+  color: white;
+}
+
+.tiles-wrapper {
+  min-height: 60vh;
+}
 
 .home-secondary-tile {
-  height: 18vh;
+  min-height: 18vh;
   padding: 20px;
   border-radius: 10px;
   z-index: 1;
@@ -40,12 +56,12 @@
 }
 
 .home-secondary-tile.last-tile {
-  background-color: #F1D97E;
-  color: #95afba;
+  background-color: white;
+  // color: #eac435;
 }
 
 .last-tile > .algorithm-icon {
-  color: #95afba;
+  color: #eac435;
 }
 
 .algorithm-icon {
@@ -63,7 +79,7 @@
   // border: 1px solid $light-gray;
   // display: flex;
   // flex-grow: 1;
-  height: 18vh;
+  min-height: 18vh;
   padding: 20px;
   margin: 1em 0;
   // text-align: center;
@@ -77,4 +93,8 @@
 
 .tile-body.active {
   display: flex;
+}
+
+.desc {
+  max-width: 80%;
 }

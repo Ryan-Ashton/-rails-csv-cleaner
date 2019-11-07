@@ -12,11 +12,20 @@
   </div>
   <div class="row justify-content-between my-4">
     <div class="col-md-4 col-sm-12 d-none d-sm-block home-main-tile">
-      <h2>How to use:</h2>
-      <h3>Instruction of steps</h3>
-      <p>Link to Terms & Condition</p>
+      <h2 class="mb-2">How to use:</h2>
+      <ol class="font-size-up">
+        <li>Select the algorithm you want to run</li>
+        <li>Upload your CSV file</li>
+        <li>Download clean CSV file in your dashboard</li>
+      </ol>
+      <ul class="security-text">
+        <h3>Your data is secured</h3>
+        <li>We clear all uploaded files every hour.</li>
+        <br>
+        <li>Read our privacy policy <strong><a href="#" class=>here</a></strong></li>
+      </ul>
     </div>
-    <div class="row col-md-8 col-sm-12 tiles-wrapper">
+    <div class="row col-md-8 col-sm-12 tiles-wrapper justify-content-around ml-0">
       <div class="row justify-content-between align-items-start w-100 mb-2">
         <div class="col-3 home-secondary-tile text-center" data-id="1" id="tile-1">
           <div class="algorithm-icon">
@@ -39,16 +48,22 @@
       </div>
       <div class="row w-100">
         <div class="col-12 tile-body justify-content-between align-items-center"  id="collapse-1">
-          <p><strong>Truncate Data</strong> algorithm will remove random empty rows from dataset</p>
-          <a class="upload_icon" data-id="1" href="#"><%= render 'shared/upload_icon' %></a>
+          <p class="desc"><strong>Truncate Data</strong> algorithm will remove random empty rows from dataset</p>
+          <a type="button" class="upload_icon" data-id="1"  data-toggle="modal" data-target="#modal-1">
+            <%= render 'shared/upload_icon' %>
+          </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-2">
-          <p><strong>Header Spaces</strong> algorithm will remove spaces out of the headers.</p>
-          <a class="upload_icon" data-id="2" href="#"><%= render 'shared/upload_icon' %></a>
+          <p class="desc"><strong>Header Spaces</strong> algorithm will remove spaces out of the headers.</p>
+          <a type="button" class="upload_icon" data-id="2"  data-toggle="modal" data-target="#modal-2">
+            <%= render 'shared/upload_icon' %>
+          </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-3">
-          <p><strong>New Lines</strong> algorithm will remove new lines out of a cell.</p>
-          <a class="upload_icon" data-id="3" href="#"><%= render 'shared/upload_icon' %></a>
+          <p class="desc"><strong>New Lines</strong> algorithm will remove new lines out of a cell.</p>
+          <a type="button" class="upload_icon" data-id="3"  data-toggle="modal" data-target="#modal-3">
+            <%= render 'shared/upload_icon' %>
+          </a>
         </div>
       </div>
       <div class="row justify-content-between align-items-center w-100 my-3">
@@ -73,16 +88,22 @@
       </div>
       <div class="row w-100">
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-4">
-          <p><strong>Over Under</strong> algorithm will repeatedly move the 2nd row into a new 2nd column.</p>
-          <a class="upload_icon" data-id="4" href="#"><%= render 'shared/upload_icon' %></a>
+          <p class="desc"><strong>Over Under</strong> algorithm will repeatedly move the 2nd row into a new 2nd column.</p>
+          <a type="button" class="upload_icon" data-id="4"  data-toggle="modal" data-target="#modal-4">
+            <%= render 'shared/upload_icon' %>
+          </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-5">
-          <p><strong>Report Format</strong> algorithm will rearrange your report into a dataset you can model from.</p>
-          <a class="upload_icon" data-id="5" href="#"><%= render 'shared/upload_icon' %></a>
+          <p class="desc"><strong>Report Format</strong> algorithm will rearrange your report into a dataset you can model from.</p>
+          <a type="button" class="upload_icon" data-id="5"  data-toggle="modal" data-target="#modal-5">
+            <%= render 'shared/upload_icon' %>
+          </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-6">
-          <p><strong>Shared Column</strong> algorithm will take what is in one column and split it out into seperate columns by a seperator.</p>
-          <a class="upload_icon" data-id="6" href="#"><%= render 'shared/upload_icon' %></a>
+          <p class="desc"><strong>Shared Column</strong> algorithm will take what is in one column and split it out into seperate columns by a seperator.</p>
+          <a type="button" class="upload_icon" data-id="6"  data-toggle="modal" data-target="#modal-6">
+            <%= render 'shared/upload_icon' %>
+          </a>
         </div>
       </div>
       <div class="row  justify-content-between align-items-end w-100 mt-2">
@@ -107,14 +128,22 @@
       </div>
       <div class="row w-100">
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-7">
-          <p>Data often gets messy by adding random symbols in the cells, <strong>Remove Symbols</strong> algorithm will remove all of that and just keep the text.</p>
-          <a class="upload_icon" data-id="7" href="#"><%= render 'shared/upload_icon' %></a>
+          <p class="desc">Data often gets messy by adding random symbols in the cells, <strong>Remove Symbols</strong> algorithm will remove all of that and just keep the text.</p>
+          <a type="button" class="upload_icon" data-id="7"  data-toggle="modal" data-target="#modal-7">
+            <%= render 'shared/upload_icon' %>
+          </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-8">
-          <p>If you have white space around the data in the columns, <strong>White Space</strong> algorithm will remove it.</p>
-          <a class="upload_icon" data-id="8" href="#"><%= render 'shared/upload_icon' %></a>
+          <p class="desc">If you have white space around the data in the columns, <strong>White Space</strong> algorithm will remove it.</p>
+          <a type="button" class="upload_icon" data-id="8"  data-toggle="modal" data-target="#modal-8">
+            <%= render 'shared/upload_icon' %>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<%= render 'pages/list_modal_algorithms' %>
+

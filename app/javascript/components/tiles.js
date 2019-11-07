@@ -13,13 +13,17 @@ const initClickedTile = () => {
     tile.addEventListener('click', (e) => {
       const id = e.currentTarget.dataset.id;
       if (id > 6) {
-        document.documentElement.scrollTo({top: 140, behavior: 'smooth'});
+        document.documentElement.scrollTo({top: 120, behavior: 'smooth'});
       } else {
         document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
       }
 
       const activeTile = document.querySelector('.home-secondary-tile.active');
-      if (activeTile) activeTile.classList.remove('active');
+      if (activeTile) {
+        const activeIcon = activeTile.querySelector('.algorithm-icon.active')
+        activeTile.classList.remove('active')
+        activeIcon.classList.remove('active');
+      }
 
       const activePopUp = document.querySelector('.tile-body.active');
       if (activePopUp) activePopUp.classList.remove('active');
@@ -28,6 +32,7 @@ const initClickedTile = () => {
       if (activePopUp !== currentTargetPopUp){
         currentTargetPopUp.classList.toggle('active');
         tile.classList.toggle('active');
+        tile.querySelector('.algorithm-icon').classList.toggle('active');
       }
 
     });
