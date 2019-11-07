@@ -1,0 +1,49 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="signupModalLabel"></h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body m-2">
+    <h2 class="mb-5">Create new account</h2>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :first_name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "off" } %>
+        <%= f.input :last_name,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "off" } %>
+        <%= f.input :profession,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "off" } %>
+        <%= f.input :location,
+                    required: false,
+                    input_html: { autocomplete: "off" } %>
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "off" } %>
+        <%= f.input :password,
+                    required: true,
+                    input_html: { autocomplete: "off" } %>
+
+        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "sign up" %>
+      </div>
+    <% end %>
+            <%#= render "devise/shared/links" %>
+  </div>
+  <div class="modal-footer mb-5">
+    <button type="button" class="btn btn-primary mx-2">Log in</button>
+    <button type="button" class="btn btn-secondary mr-4" data-dismiss="modal">Close</button>
+  </div>
+</div>
