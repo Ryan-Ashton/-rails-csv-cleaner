@@ -1,7 +1,8 @@
 <div class="container">
   <h1>Dashboard</h1>
     <div>
-      <%= simple_form_for(@task) do |f| %>
+    <% @algorithm = Algorithm.first %>
+        <%= simple_form_for([@algorithm, @task]) do |f| %>
         <%= f.input :file %>
         <%= f.input :file_cache, as: :hidden %>
         <%= f.button :submit, "Convert", class: "btn-primary" %>
