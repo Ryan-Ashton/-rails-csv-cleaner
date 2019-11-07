@@ -10,14 +10,13 @@ class TasksController < ApplicationController
   def create
 
     @task = Task.new(task_params)
-    # byebug
     @task.user = current_user
 
     # Placeholder algorithm
     # @task.algorithm = Algorithm.first
 
     if @task.save
-      csv_data = FileConverter.algorithm_1(task_params[:file].tempfile.path)
+      csv_data = FileConverter.algorithm_1(@task)
       send_data csv_data, filename: task_params[:file].original_filename + "-fixed.csv", disposition: :attachment
     else
       flash[:alert] = @task.errors.full_messages
