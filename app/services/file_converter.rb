@@ -4,7 +4,7 @@ require 'pry-byebug'
 class FileConverter < ApplicationService
 
   def initialize(file)
-    @file = file
+    @csv_blob = file
   end
 
   # Remove symbol algorithm
@@ -12,7 +12,7 @@ class FileConverter < ApplicationService
     csv_options = { col_sep: ',', quote_char: '"' }
     lines = []
 
-    CSV.foreach(@file, csv_options) do | row |
+    CSV.parse(@csv_blob.file.download, csv_options) do | row |
       lines << row.map! { |e| e.gsub(/[^A-Za-z]+/, '')}
     end
 
@@ -31,13 +31,13 @@ class FileConverter < ApplicationService
   def header_spaces
 
     csv_options = { col_sep: ',', quote_char: '"' }
-  
+
     lines = []
-  
+
     CSV.foreach(@file, csv_options) do | row |
       lines << row.map { |e| e.gsub(/ +?/, '') }
     end
-  
+
     csv_data = CSV.generate(headers: true) do |csv|
       lines.each do |line|
         csv << line
@@ -55,13 +55,13 @@ class FileConverter < ApplicationService
   def remove_new_lines
 
     csv_options = { col_sep: ',', quote_char: '"' }
-  
+
     lines = []
-  
+
     CSV.foreach(@file, csv_options) do | row |
       lines << row.map { |e| e.gsub(/[\n\r +?]/, '') }
     end
-  
+
     csv_data = CSV.generate(headers: true) do |csv|
       lines.each do |line|
         csv << line
@@ -77,14 +77,14 @@ class FileConverter < ApplicationService
     def remove_blank_columns
 
       csv_options = { col_sep: ',', quote_char: '"' }
-    
+
       lines = []
-    
+
       CSV.foreach(@file, csv_options) do | row |
         row = row.compact!
         lines << row
       end
-    
+
       csv_data = CSV.generate(headers: true) do |csv|
         lines.each do |line|
           csv << line
@@ -100,13 +100,13 @@ class FileConverter < ApplicationService
     def white_space_left_right
 
       csv_options = { col_sep: ',', quote_char: '"' }
-    
+
       lines = []
-    
+
       CSV.foreach(@file, csv_options) do | row |
         lines << row.map { |e| e.gsub(/ +?/, '') }
       end
-    
+
       csv_data = CSV.generate(headers: true) do |csv|
         lines.each do |line|
           csv << line

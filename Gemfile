@@ -16,9 +16,7 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'cloudinary'
-gem 'carrierwave'
-gem 'file_validators'
+gem 'activestorage-validator'
 
 
 group :development do

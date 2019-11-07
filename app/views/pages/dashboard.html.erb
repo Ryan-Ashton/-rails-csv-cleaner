@@ -4,7 +4,6 @@
     <% @algorithm = Algorithm.first %>
         <%= simple_form_for([@algorithm, @task]) do |f| %>
         <%= f.input :file %>
-        <%= f.input :file_cache, as: :hidden %>
         <%= f.button :submit, "Convert", class: "btn-primary" %>
         <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
       <% end %>

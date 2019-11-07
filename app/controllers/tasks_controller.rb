@@ -10,9 +10,11 @@ class TasksController < ApplicationController
   def create
 
     @task = Task.new(task_params)
+
     # byebug
     @algorithm = Algorithm.find(params[:algorithm_id])
     @task.algorithm = @algorithm
+
     @task.user = current_user
     
     # Placeholder algorithm
@@ -35,9 +37,7 @@ class TasksController < ApplicationController
         csv_data = FileConverter.missing_random_data(params[:task][:file].tempfile.path)
       end
 
-
-      send_data csv_data, filename: params[:task][:file].original_filename + "-fixed.csv", disposition: :attachment
-
+      send_data csv_data, filename: task_params[:file].original_filename + "-fixed.csv", disposition: :attachment
     else
       flash[:alert] = @task.errors.full_messages
       redirect_to dashboard_path
