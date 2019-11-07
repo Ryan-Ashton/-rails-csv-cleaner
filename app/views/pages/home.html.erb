@@ -2,121 +2,97 @@
 
 <div class="container home-grid">
   <div class="row justify-content-between align-items-end">
-    <div class="d-flex col-md-6 col-sm-12 px-0 mx-0">
+    <div class="d-flex col-lg-6 col-md-12">
       <h1 id="home-header">Let us handle those messy files for you</h1>
     </div>
-    <div class="col-6 text-right"> <!-- How to make it invisible on the sm device -->
+    <div class="col-lg-6 d-none d-lg-block text-right"> <!-- How to make it invisible on the sm device -->
       <h2 id="csv-counter">#67598<%#= @files_counter %></h2>
       <p>CSV files have been cleaned to date</p>
     </div>
   </div>
   <div class="row justify-content-between my-4">
-    <div class="col-md-4 col-sm-12 home-main-tile">
+    <div class="col-md-4 col-sm-12 d-none d-sm-block home-main-tile">
       <h2>How to use:</h2>
       <h3>Instruction of steps</h3>
       <p>Link to Terms & Condition</p>
     </div>
-    <div class="row col-md-8 col-sm-12">
-      <div class="row justify-content-between align-items-start w-100">
-        <div class="col-3 home-secondary-tile text-center"  data-toggle="collapse" href="#truncate_collapse" role="button" aria-expanded="false" aria-controls="#truncate_collapse">
+    <div class="row col-md-8 col-sm-12 tiles-wrapper">
+      <div class="row justify-content-between align-items-start w-100 mb-2">
+        <div class="col-3 home-secondary-tile text-center" data-id="1" id="tile-1">
           <div class="algorithm-icon">
             <i class="fas fa-compress-arrows-alt"></i>
           </div>
           Truncate Data
         </div>
-        <div class="col-3 home-secondary-tile text-center" data-toggle="collapse" href="#headerspaces_collapse" role="button" aria-expanded="false" aria-controls="#headerspaces_collapse">
+        <div class="col-3 home-secondary-tile text-center" data-id="2" id="tile-2">
           <div class="algorithm-icon">
             <i class="fas fa-angle-double-right"></i>
           </div>
           Header Spaces
         </div>
-        <div class="col-3 home-secondary-tile text-center" data-toggle="collapse" href="#newlines_collapse" role="button" aria-expanded="false" aria-controls="#newlines_collapse">
+        <div class="col-3 home-secondary-tile text-center" data-id="3" id="tile-3">
           <div class="algorithm-icon">
             <i class="fas fa-stream"></i>
           </div>
           New Lines
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="collapse multi-collapse" id="truncate_collapse">
-            <div class="d-flex tile-body align-items-start">
-              <p>This algorithm will remove random empty rows from dataset</p>
-              <%= render 'shared/upload_icon' %>
-            </div>
-          </div>
+      <div class="row w-100">
+        <div class="col-12 tile-body justify-content-between align-items-center"  id="collapse-1">
+          <p><strong>Truncate Data</strong> algorithm will remove random empty rows from dataset</p>
+          <%= render 'shared/upload_icon' %>
         </div>
-        <div class="col-12">
-          <div class="collapse multi-collapse" id="headerspaces_collapse">
-            <div class="d-flex tile-body align-items-start">
-              <p>This algorithm will remove spaces out of the headers.</p>
-              <%= render 'shared/upload_icon' %>
-            </div>
-          </div>
+        <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-2">
+          <p><strong>Header Spaces</strong> algorithm will remove spaces out of the headers.</p>
+          <%= render 'shared/upload_icon' %>
         </div>
-        <div class="col-12">
-          <div class="collapse multi-collapse" id="newlines_collapse">
-            <div class="d-flex tile-body align-items-start">
-              <p>This algorithm will remove new lines out of a cell.</p>
-              <%= render 'shared/upload_icon' %>
-            </div>
-          </div>
+        <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-3">
+          <p><strong>New Lines</strong> algorithm will remove new lines out of a cell.</p>
+          <%= render 'shared/upload_icon' %>
         </div>
       </div>
-      <div class="row justify-content-between align-items-center w-100">
-        <div class="col-3 home-secondary-tile text-center" data-toggle="collapse" href="#overunder_collapse" role="button" aria-expanded="false" aria-controls="#overunder_collapse">
+      <div class="row justify-content-between align-items-center w-100 my-3">
+        <div class="col-3 home-secondary-tile text-center" data-id="4" id="#tile-4">
           <div class="algorithm-icon">
             <i class="fas fa-retweet"></i>
           </div>
           Over Under
         </div>
-        <div class="col-3 home-secondary-tile text-center" data-toggle="collapse" href="#report_collapse" role="button" aria-expanded="false" aria-controls="#report_collapse">
+        <div class="col-3 home-secondary-tile text-center" data-id="5" id="#tile-5">
           <div class="algorithm-icon">
             <i class="far fa-chart-bar"></i>
           </div>
           Report Format
         </div>
-        <div class="col-3 home-secondary-tile text-center" data-toggle="collapse" href="#column_collapse" role="button" aria-expanded="false" aria-controls="#column_collapse">
+        <div class="col-3 home-secondary-tile text-center" data-id="6" id="#tile-6">
           <div class="algorithm-icon">
             <i class="fas fa-braille"></i>
           </div>
           Shared Column
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="collapse multi-collapse" id="overunder_collapse">
-            <div class="d-flex tile-body align-items-start">
-              <p>This algorithm will repeatedly move the 2nd row into a new 2nd column.</p>
-              <%= render 'shared/upload_icon' %>
-            </div>
-          </div>
+      <div class="row w-100">
+        <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-4">
+          <p><strong>Over Under</strong> algorithm will repeatedly move the 2nd row into a new 2nd column.</p>
+          <%= render 'shared/upload_icon' %>
         </div>
-        <div class="col-12">
-          <div class="collapse multi-collapse" id="report_collapse">
-            <div class="d-flex tile-body align-items-start">
-              <p>This algorithm will rearrange your report into a dataset you can model from.</p>
-              <%= render 'shared/upload_icon' %>
-            </div>
-          </div>
+        <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-5">
+          <p><strong>Report Format</strong> algorithm will rearrange your report into a dataset you can model from.</p>
+          <%= render 'shared/upload_icon' %>
         </div>
-        <div class="col-12">
-          <div class="collapse multi-collapse" id="column_collapse">
-            <div class="d-flex tile-body align-items-start">
-              <p>This algorithm will take what is in one column and split it out into seperate columns by a seperator.</p>
-              <%= render 'shared/upload_icon' %>
-            </div>
-          </div>
+        <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-6">
+          <p><strong>Shared Column</strong> algorithm will take what is in one column and split it out into seperate columns by a seperator.</p>
+          <%= render 'shared/upload_icon' %>
         </div>
       </div>
-      <div class="row  justify-content-between align-items-end w-100">
-        <div class="col-3 home-secondary-tile text-center" data-toggle="collapse" href="#symbol_collapse" role="button" aria-expanded="false" aria-controls="#symbol_collapse">
+      <div class="row  justify-content-between align-items-end w-100 mt-2">
+        <div class="col-3 home-secondary-tile text-center" data-id="7" id="#tile-7">
           <div class="algorithm-icon">
             <i class="fab fa-slack-hash"></i>
           </div>
           Remove Symbols
         </div>
-        <div class="col-3 home-secondary-tile text-center" data-toggle="collapse" href="#whitespace_collapse" role="button" aria-expanded="false" aria-controls="#whitespace_collapse">
+        <div class="col-3 home-secondary-tile text-center" data-id="8" id="#tile-8">
           <div class="algorithm-icon">
             <i class="fas fa-eraser"></i>
           </div>
@@ -129,22 +105,14 @@
           Share our page
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="collapse multi-collapse" id="symbol_collapse">
-            <div class="d-flex tile-body align-items-start">
-              <p>Data often gets messy by adding random symbols in the cells, this algorithm will remove all of that and just keep the text.</p>
-              <%= render 'shared/upload_icon' %>
-            </div>
-          </div>
+      <div class="row w-100">
+        <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-7">
+          <p>Data often gets messy by adding random symbols in the cells, <strong>Remove Symbols</strong> algorithm will remove all of that and just keep the text.</p>
+          <%= render 'shared/upload_icon' %>
         </div>
-        <div class="col-12">
-          <div class="collapse multi-collapse" id="whitespace_collapse">
-            <div class="d-flex tile-body align-items-start">
-              <p>If you have white space around the data in the columns, this algorithm will remove it.</p>
-              <%= render 'shared/upload_icon' %>
-            </div>
-          </div>
+        <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-8">
+          <p>If you have white space around the data in the columns, <strong>White Space</strong> algorithm will remove it.</p>
+          <%= render 'shared/upload_icon' %>
         </div>
       </div>
     </div>
