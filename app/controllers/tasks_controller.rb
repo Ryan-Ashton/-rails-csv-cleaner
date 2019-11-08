@@ -36,10 +36,16 @@ class TasksController < ApplicationController
         csv_data = FileConverter.new(@task.file).remove_blank_columns
       end
 
-      send_data csv_data, filename: params[:task][:file].original_filename + "-fixed.csv", disposition: :attachment
+      if csv_data == false
+        flash[:alert] = "Error while processing file."
+        redirect_to root_path
+      else
+        send_data csv_data, filename: params[:task][:file].original_filename + "-fixed.csv", disposition: :attachment
+      end
+
     else
       flash[:alert] = @task.errors.full_messages
-      redirect_to dashboard_path
+      redirect_to root_path
     end
 
   end
