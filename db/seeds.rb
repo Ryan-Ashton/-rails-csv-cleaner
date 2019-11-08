@@ -16,15 +16,15 @@ header_spaces = Algorithm.create(name:"Remove Header Spaces", description: "This
 
 new_lines = Algorithm.create(name:"Remove New Lines from Cell", description: "This will remove new lines out of a cell")
 
-over_under = Algorithm.create(name:"Redistribute Single Column of Data", description: "This will repeatedly move the 2nd row into a new 2nd column")
-
-report_format = Algorithm.create(name:"Turn report into dataset", description: "This will rearrange your report into a dataset you can model from")
-
-shared_column = Algorithm.create(name:"Split single column into multiple columns", description: "This will take what is in one column and split it out into seperate columns by a seperator")
-
 symbols_around_data = Algorithm.create(name:"Remove Unwanted Symbols", description: "Data often gets messy by adding random symbols in the cells, this will remove all of that and just keep the text")
 
 white_space_left_right = Algorithm.create(name:"Clear white spaces left/right", description: "If you have white space around the data in the columns, this will remove it")
+
+over_under = Algorithm.create(name:"Redistribute Single Column of Data", description: "This will repeatedly move the 2nd row into a new 2nd column")
+
+shared_column = Algorithm.create(name:"Split single column into multiple columns", description: "This will take what is in one column and split it out into seperate columns by a seperator")
+
+report_format = Algorithm.create(name:"Turn report into dataset", description: "This will rearrange your report into a dataset you can model from")
 
 puts "creating Tasks!"
 
