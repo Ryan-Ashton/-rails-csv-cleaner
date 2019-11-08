@@ -15,7 +15,7 @@ class TasksController < ApplicationController
     @task.algorithm = @algorithm
     @task.file = params[:task][:file]
     @task.user = current_user
-    
+
     # Placeholder algorithm
     # @task.algorithm = Algorithm.first
 
@@ -23,17 +23,17 @@ class TasksController < ApplicationController
       csv_data = nil
 
       if @task.algorithm_id == 1
-        csv_data = FileConverter.algorithm_1(@task.file)  
+        csv_data = FileConverter.new(@task.file).remove_symbols
       elsif @task.algorithm_id == 2
-        csv_data = FileConverter.header_spaces(@task.file)
+        csv_data = FileConverter.new(@task.file).header_spaces
       elsif @task.algorithm_id == 3
-        csv_data = FileConverter.remove_new_lines(@task.file)
+        csv_data = FileConverter.new(@task.file).remove_new_lines
       elsif @task.algorithm_id == 4
-        csv_data = FileConverter.remove_blank_columns(@task.file)
+        csv_data = FileConverter.new(@task.file).remove_blank_columns
       elsif @task.algorithm_id == 5
-        csv_data = FileConverter.white_space_left_right(@task.file)
+        csv_data = FileConverter.new(@task.file).white_space_left_right
       elsif @task.algorithm_id == 6
-        csv_data = FileConverter.missing_random_data(@task.file)
+        csv_data = FileConverter.new(@task.file).missing_random_data
       end
 
       send_data csv_data, filename: params[:task][:file].original_filename + "-fixed.csv", disposition: :attachment
@@ -49,7 +49,7 @@ class TasksController < ApplicationController
 
   private
 
-  def task_params
-    params.require(:task).permit()
-  end
+  # def task_params
+  #   params.require(:task).permit(:file)
+  # end
 end
