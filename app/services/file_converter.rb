@@ -15,22 +15,26 @@ class FileConverter
 
     lines = []
 
-    clean.to_a
-
+    clean = clean.to_a
+  
+    header = clean[0] 
+    
+    counter = 0
+  
     clean.each do |row|
-      lines << row
+      if counter == 0
+        lines << header
+        counter += 1
+      else
+        lines << row
+        counter += 1
+      end
     end
-
-    csv_data = CSV.generate(headers: true) do |csv|
+  
+    csv_data = CSV.generate(headers: :first_row) do |csv|
       lines.each do |line|
         csv << line
       end
-    end
-
-    return csv_data
-
-    rescue Exception
-      return false
     end
   end
 
