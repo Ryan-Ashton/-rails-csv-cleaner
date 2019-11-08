@@ -74,39 +74,39 @@
       <div class="row justify-content-between align-items-center w-100 my-3">
         <div class="col-3 home-secondary-tile text-center" data-id="4" id="#tile-4">
           <div class="algorithm-icon">
+            <i class="fab fa-slack-hash"></i>
+          </div>
+          Remove Symbols
+        </div>
+        <div class="col-3 home-secondary-tile text-center" data-id="5" id="#tile-5">
+          <div class="algorithm-icon">
+            <i class="fas fa-eraser"></i>
+          </div>
+          White Space
+        </div>
+        <div class="col-3 home-secondary-tile text-center" data-id="6" id="#tile-6">
+          <div class="algorithm-icon">
             <i class="fas fa-retweet"></i>
           </div>
           Over Under
         </div>
-        <div class="col-3 home-secondary-tile text-center" data-id="5" id="#tile-5">
-          <div class="algorithm-icon">
-            <i class="far fa-chart-bar"></i>
-          </div>
-          Report Format
-        </div>
-        <div class="col-3 home-secondary-tile text-center" data-id="6" id="#tile-6">
-          <div class="algorithm-icon">
-            <i class="fas fa-braille"></i>
-          </div>
-          Shared Column
-        </div>
       </div>
       <div class="row w-100">
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-4">
-          <p class="desc"><strong>Over Under</strong> algorithm will repeatedly move the 2nd row into a new 2nd column.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="4"  data-name="Over Under" data-toggle="modal" data-target="#formModal">
+          <p class="desc">Data often gets messy by adding random symbols in the cells, <strong>Remove Symbols</strong> algorithm will remove all of that and just keep the text.</p>
+          <a type="button" class=" modal-form-btn upload_icon" data-id="4" data-name="Remove Symbols" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-5">
-          <p class="desc"><strong>Report Format</strong> algorithm will rearrange your report into a dataset you can model from.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="5" data-name="Report Format" data-toggle="modal" data-target="#formModal">
+          <p class="desc">If you have white space around the data in the columns, <strong>White Space</strong> algorithm will remove it.</p>
+          <a type="button" class=" modal-form-btn upload_icon" data-id="5" data-name="White Space" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-6">
-          <p class="desc"><strong>Shared Column</strong> algorithm will take what is in one column and split it out into seperate columns by a seperator.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="6" data-name="Shared Column" data-toggle="modal" data-target="#formModal">
+          <p class="desc"><strong>Over Under</strong> algorithm will repeatedly move the 2nd row into a new 2nd column.</p>
+          <a type="button" class=" modal-form-btn upload_icon" data-id="6"  data-name="Over Under" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
@@ -114,15 +114,15 @@
       <div class="row  justify-content-between align-items-end w-100 mt-2">
         <div class="col-3 home-secondary-tile text-center" data-id="7" id="#tile-7">
           <div class="algorithm-icon">
-            <i class="fab fa-slack-hash"></i>
+            <i class="fas fa-braille"></i>
           </div>
-          Remove Symbols
+          Shared Column
         </div>
         <div class="col-3 home-secondary-tile text-center" data-id="8" id="#tile-8">
           <div class="algorithm-icon">
-            <i class="fas fa-eraser"></i>
+            <i class="far fa-chart-bar"></i>
           </div>
-          White Space
+          Report Format
         </div>
         <div class="col-3 home-secondary-tile text-center last-tile">
           <div class="algorithm-icon">
@@ -133,14 +133,14 @@
       </div>
       <div class="row w-100">
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-7">
-          <p class="desc">Data often gets messy by adding random symbols in the cells, <strong>Remove Symbols</strong> algorithm will remove all of that and just keep the text.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="7" data-name="Remove Symbols" data-toggle="modal" data-target="#formModal">
+          <p class="desc"><strong>Shared Column</strong> algorithm will take what is in one column and split it out into seperate columns by a seperator.</p>
+          <a type="button" class=" modal-form-btn upload_icon" data-id="7" data-name="Shared Column" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-8">
-          <p class="desc">If you have white space around the data in the columns, <strong>White Space</strong> algorithm will remove it.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="8" data-name="White Space" data-toggle="modal" data-target="#formModal">
+          <p class="desc"><strong>Report Format</strong> algorithm will rearrange your report into a dataset you can model from.</p>
+          <a type="button" class=" modal-form-btn upload_icon" data-id="8" data-name="Report Format" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
