@@ -18,7 +18,15 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'activestorage-validator'
 
+<<<<<<< HEAD
 gem 'csv'
+=======
+# Put here to don't break in production
+gem 'pry-byebug'
+
+
+
+>>>>>>> 29edc319aef689ef36e99d580ddb6442f49acae0
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

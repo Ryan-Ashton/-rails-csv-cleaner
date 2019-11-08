@@ -14,21 +14,30 @@ class FileConverter
 
     lines = []
 
-    clean.to_a
+    clean = clean.to_a
+
+    header = clean[0]
+
+    counter = 0
 
     clean.each do |row|
-      lines << row
+      if counter == 0
+        lines << header
+        counter += 1
+      else
+        lines << row
+        counter += 1
+      end
     end
 
-    csv_data = CSV.generate(headers: true) do |csv|
+    csv_data = CSV.generate(headers: :first_row) do |csv|
       lines.each do |line|
         csv << line
       end
     end
 
-    return csv_data
-
-    rescue Exception
+    rescue Exception => e
+      puts e
       return false
     end
   end
@@ -53,7 +62,8 @@ class FileConverter
 
     return csv_data
 
-    rescue Exception
+    rescue Exception => e
+      puts e
       return false
     end
   end
@@ -78,7 +88,8 @@ class FileConverter
 
     return csv_data
 
-    rescue Exception
+    rescue Exception => e
+      puts e
       return false
     end
   end
@@ -102,13 +113,14 @@ class FileConverter
 
     return csv_data
 
-    rescue Exception
+    rescue Exception => e
+      puts e
       return false
     end
   end
 
   #######################################################
-  
+
   def white_space_left_right
     begin
     csv_options = { col_sep: ',', quote_char: '"' }
@@ -127,7 +139,8 @@ class FileConverter
 
     return csv_data
 
-    rescue Exception
+    rescue Exception => e
+      puts e
       return false
     end
   end
@@ -158,7 +171,8 @@ class FileConverter
         return false
       end
     end
+
   end
 
-    
+
 
