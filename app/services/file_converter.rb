@@ -12,7 +12,7 @@ class FileConverter < ApplicationService
     csv_options = { col_sep: ',', quote_char: '"' }
     lines = []
 
-    CSV.parse(@csv_blob.file.download, csv_options) do | row |
+    CSV.parse(@csv_blob.download, csv_options) do | row |
       lines << row.map! { |e| e.gsub(/[^A-Za-z]+/, '')}
     end
 

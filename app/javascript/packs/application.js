@@ -7,4 +7,4 @@ import { initHoverUpload } from '../components/uploadButton';
 initUpdateNavbarOnScroll();
 initParticle();
 initClickedTile();
-initHoverUpload();
+//initHoverUpload();

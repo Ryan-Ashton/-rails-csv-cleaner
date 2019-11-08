@@ -21,12 +21,11 @@ Rails.application.routes.draw do
   get 'features', to: "pages#features", as: :features
   get 'faq', to: "pages#faq", as: :faq
   get 'dashboard', to: "pages#dashboard", as: :dashboard
-  resources :tasks , only: [:index, :show] do
+  resources :tasks , only: [:create, :index, :show] do
     resources :feedbacks
   end
-  resources :algorithms, only: [:index, :show] do
-    resources :tasks, only: [:create]
-  end
+  resources :algorithms, only: [:index, :show] 
+   
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -2,6 +2,7 @@
   <div>
     <%= simple_form_for(@task) do |f| %>
       <%= f.input :file, class: "my-5" %>
+      <%= f.hidden_field :algorithm %>
       <%= f.button :submit, "Run", class: "btn btn-primary mt-4 mr-2" %>
       <%= f.button :button, "Choose different file", type: "reset", class: "btn btn-secondary mt-4" %>
     <% end %>

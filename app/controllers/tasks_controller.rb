@@ -8,13 +8,12 @@ class TasksController < ApplicationController
   end
 
   def create
-
-    @task = Task.new(task_params)
+    @task = Task.new
 
     # byebug
-    @algorithm = Algorithm.find(params[:algorithm_id])
+    @algorithm = Algorithm.find(params[:task][:algorithm])
     @task.algorithm = @algorithm
-
+    @task.file = params[:task][:file]
     @task.user = current_user
     
     # Placeholder algorithm
@@ -24,20 +23,20 @@ class TasksController < ApplicationController
       csv_data = nil
 
       if @task.algorithm_id == 1
-        csv_data = FileConverter.algorithm_1(params[:task][:file].tempfile.path)  
+        csv_data = FileConverter.algorithm_1(@task.file)  
       elsif @task.algorithm_id == 2
-        csv_data = FileConverter.header_spaces(params[:task][:file].tempfile.path)
+        csv_data = FileConverter.header_spaces(@task.file)
       elsif @task.algorithm_id == 3
-        csv_data = FileConverter.remove_new_lines(params[:task][:file].tempfile.path)
+        csv_data = FileConverter.remove_new_lines(@task.file)
       elsif @task.algorithm_id == 4
-        csv_data = FileConverter.remove_blank_columns(params[:task][:file].tempfile.path)
+        csv_data = FileConverter.remove_blank_columns(@task.file)
       elsif @task.algorithm_id == 5
-        csv_data = FileConverter.white_space_left_right(params[:task][:file].tempfile.path)
+        csv_data = FileConverter.white_space_left_right(@task.file)
       elsif @task.algorithm_id == 6
-        csv_data = FileConverter.missing_random_data(params[:task][:file].tempfile.path)
+        csv_data = FileConverter.missing_random_data(@task.file)
       end
 
-      send_data csv_data, filename: task_params[:file].original_filename + "-fixed.csv", disposition: :attachment
+      send_data csv_data, filename: params[:task][:file].original_filename + "-fixed.csv", disposition: :attachment
     else
       flash[:alert] = @task.errors.full_messages
       redirect_to dashboard_path
