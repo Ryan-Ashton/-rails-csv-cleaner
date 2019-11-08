@@ -26,23 +26,23 @@ shared_column = Algorithm.create(name:"Split single column into multiple columns
 
 report_format = Algorithm.create(name:"Turn report into dataset", description: "This will rearrange your report into a dataset you can model from")
 
-puts "creating Tasks!"
+# puts "creating Tasks!"
 
-sesh_1 = Task.create(title: "my first Task", user_id: user_1, algorithm_id: truncate_data)
+# sesh_1 = Task.create(title: "my first Task", user_id: user_1, algorithm_id: truncate_data)
 
-sesh_2 = Task.create(title: "my second Task", user_id: user_1, algorithm_id: symbols_around_data)
+# sesh_2 = Task.create(title: "my second Task", user_id: user_1, algorithm_id: symbols_around_data)
 
-sesh_3 = Task.create(title: "my third Task", user_id: user_1, algorithm_id: report_format)
+# sesh_3 = Task.create(title: "my third Task", user_id: user_1, algorithm_id: report_format)
 
-sesh_4 = Task.create(title: "my fourth Task", user_id: user_1, algorithm_id: new_lines)
+# sesh_4 = Task.create(title: "my fourth Task", user_id: user_1, algorithm_id: new_lines)
 
-puts "creating feedback!"
+# puts "creating feedback!"
 
-feed1 = Feedback.create(rating: 5, comments: "did a good job, thanks", task_id: sesh_1)
+# feed1 = Feedback.create(rating: 5, comments: "did a good job, thanks", task_id: sesh_1)
 
-feed2 = Feedback.create(rating: 4, comments: "Almost there, thanks", task_id: sesh_2)
+# feed2 = Feedback.create(rating: 4, comments: "Almost there, thanks", task_id: sesh_2)
 
-feed3 = Feedback.create(rating: 3, comments: "It did OK", task_id: sesh_3)
+# feed3 = Feedback.create(rating: 3, comments: "It did OK", task_id: sesh_3)
 
-feed4 = Feedback.create(rating: 5, comments: "Nice!", task_id: sesh_4)
+# feed4 = Feedback.create(rating: 5, comments: "Nice!", task_id: sesh_4)
 
