@@ -13,7 +13,7 @@
     </div>
   </div>
 
-  
+
 
   <div class="row justify-content-between my-4">
     <div class="col-md-4 col-sm-12 d-none d-sm-block home-main-tile">
@@ -25,7 +25,7 @@
       </ol>
       <ul class="security-text">
         <h3>Your data is secured</h3>
-        <li>We clear all uploaded files every hour.</li>
+        <li>We never keep your file.</li>
         <br>
         <li>Read our privacy policy <strong><a href="#" class=>here</a></strong></li>
       </ul>
@@ -60,13 +60,13 @@
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-2">
           <p class="desc"><strong>Header Spaces</strong> algorithm will remove spaces out of the headers.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-name="Header Spaces" data-id="2"  data-toggle="modal" data-target="#formModal">
+          <a type="button" class=" modal-form-btn upload_icon" data-id="2" data-name="Header Spaces" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-3">
           <p class="desc"><strong>New Lines</strong> algorithm will remove new lines out of a cell.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="3"  data-toggle="modal" data-target="#formModal">
+          <a type="button" class=" modal-form-btn upload_icon" data-id="3"  data-name="New Lines" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
@@ -94,19 +94,19 @@
       <div class="row w-100">
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-4">
           <p class="desc"><strong>Over Under</strong> algorithm will repeatedly move the 2nd row into a new 2nd column.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="4"  data-toggle="modal" data-target="#formModal">
+          <a type="button" class=" modal-form-btn upload_icon" data-id="4"  data-name="Over Under" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-5">
           <p class="desc"><strong>Report Format</strong> algorithm will rearrange your report into a dataset you can model from.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="5"  data-toggle="modal" data-target="#formModal">
+          <a type="button" class=" modal-form-btn upload_icon" data-id="5" data-name="Report Format" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-6">
           <p class="desc"><strong>Shared Column</strong> algorithm will take what is in one column and split it out into seperate columns by a seperator.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="6"  data-toggle="modal" data-target="#formModal">
+          <a type="button" class=" modal-form-btn upload_icon" data-id="6" data-name="Shared Column" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
@@ -134,13 +134,13 @@
       <div class="row w-100">
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-7">
           <p class="desc">Data often gets messy by adding random symbols in the cells, <strong>Remove Symbols</strong> algorithm will remove all of that and just keep the text.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="7"  data-toggle="modal" data-target="#formModal">
+          <a type="button" class=" modal-form-btn upload_icon" data-id="7" data-name="Remove Symbols" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-8">
           <p class="desc">If you have white space around the data in the columns, <strong>White Space</strong> algorithm will remove it.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="8"  data-toggle="modal" data-target="#formModal">
+          <a type="button" class=" modal-form-btn upload_icon" data-id="8" data-name="White Space" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
@@ -176,5 +176,5 @@
       modalTitle.innerText = title
       input.value= id
    })
- }) 
+ })
 </script>
