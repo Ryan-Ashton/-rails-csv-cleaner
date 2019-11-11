@@ -25,7 +25,10 @@ Rails.application.routes.draw do
     resources :feedbacks
   end
   resources :algorithms, only: [:index, :show] 
-   
-  devise_for :users
+
+  get "/users/auth/linkedin/callback", to: "omniauth_callbacks#linkedin"   
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

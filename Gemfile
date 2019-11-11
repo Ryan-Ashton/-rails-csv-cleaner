@@ -3,6 +3,9 @@ ruby '2.6.3'
 
 gem 'bootsnap', require: false
 gem 'devise'
+gem 'omniauth' 
+gem 'omniauth-linkedin-oauth2'
+gem 'multi_json'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
