@@ -4,15 +4,9 @@ const signUpButton = document.getElementById('btn-signup');
 $(document).ready(function() {
   $('.modal').modal('hide');
   modalToggler.innerHTML = `
-    <li class="nav-item dropdown">
-      <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="/assets/image-50f827d68377a997b93aca70f1dd00449cc86727463944d04e404a2eb52b08de.png">
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="/">Clean a CSV</a>
-        <a class="dropdown-item" rel="nofollow" data-method="delete" href="/users/sign_out">Log out</a>
-      </div>
-    </li>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
   `
   signUpButton.innerHTML = `
-    <a href="/dashboard" class="nav-link">Dashboard</a>
+    <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
   `
 })
