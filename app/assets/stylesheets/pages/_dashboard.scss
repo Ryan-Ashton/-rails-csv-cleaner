@@ -1,0 +1,81 @@
+#dash-header {
+  margin: 12vh 0 5vh 0;
+}
+
+#download-box {
+  margin-bottom: 4%;
+  padding: 2%;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  // z-index: 1;
+}
+
+#dash-main-card {
+  // z-index: 1;
+  margin-bottom: 6%;
+  padding: 2%;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  // background-image: linear-gradient(300deg, #83ccd9, rgba(21,170,191,1));
+}
+
+.graph-card {
+  height: 36vh;
+  margin: 4% 0;
+  padding: 2%;
+  border-radius: 6px;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.pie-chart {
+  height: 44vh;
+  margin: 4% 0;
+  padding: 2%;
+  border-radius: 6px;
+  background-color: #f4f4f4;
+}
+
+.algorithm-list {
+  margin: 2% 0;
+  padding: 2%;
+  border-radius: 6px;
+  background-image: linear-gradient(300deg, #83ccd9, rgba(21,170,191,1));
+  opacity:0.8;
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.fa-download {
+  font-size: 48px;
+  text-decoration: none;
+  color: #15aabf;
+  opacity: 0.8;
+}
+
+.fa-download:hover {
+  opacity: 1;
+}
+
+#filename {
+  font-size: 14px;
+  text-decoration: none;
+  color: #15aabf;
+  margin-top: 4%;
+  opacity: 0.8;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #15aabf;
+  opacity: 1;
+}
+
+a:active {
+  text-decoration: none;
+  opacity: 1;
+}

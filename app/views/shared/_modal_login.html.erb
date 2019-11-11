@@ -7,8 +7,9 @@
   </div>
   <div class="modal-body m-2">
     <h2 class="mb-5">Log into your account</h2>
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), remote: true) do |f| %>
       <%= f.error_notification %>
+      <div class="errors"></div>
       <div class="form-inputs">
         <%= f.input :email,
                     required: true,
@@ -20,12 +21,14 @@
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
       <div class="form-actions class="btn btn-primary>
-        <%= f.button :submit, "Log in" %>
+        <%= f.button :submit, "Log in", class:"btn btn-info mt-4" %>
       </div>
     <% end %>
   </div>
   <div class="modal-footer mb-5">
-      <!-- <button type="button" class="btn btn-primary">Log in</button> -->
+    <button type="button" class="btn btn-primary mr-2" data-dismiss="modal" href="new_user_registration_path" data-toggle="modal" data-target="#signupModal">
+      Sign Up
+    </button>
     <button type="button" class="btn btn-secondary mr-4" data-dismiss="modal">Close</button>
   </div>
 </div>

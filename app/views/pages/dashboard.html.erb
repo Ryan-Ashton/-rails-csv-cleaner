@@ -1,13 +1,55 @@
-<div class="container">
-  <div class="extra-container-margin">
+<!-- <div id="particles-js"></div> -->
+
+<div class="container home-grid">
+  <% if @task.file.attached? %>
+    <div class="row justify-content-between align-items-center" id="download-box">
+      <div class="col-lg-9 col-md-12">
+        <h1 id="home-header">Download your clean data here</h1>
+        <p>Make sure you save it to your computer, since we are not going to keep any file.</p>
+      </div>
+      <div class="col-lg-3 d-none d-lg-block text-center"> <!-- How to make it invisible on the sm device -->
+        <%= link_to rails_blob_path(@task.file, disposition: 'attachment') do %>
+          <i class="fas fa-download"></i>
+          <div id="filename"><%= @task.file.blob.filename %></div>
+        <% end %>
+      </div>
+    </div>
+
+  <% end %>
+  <div class="row justify-content-between" id="dash-main-card">
+    <div class="col-4">
+      <div class="graph-card">
+        Number of uploads
+        Github contribution style? How?
+      </div>
+      <div class="graph-card">
+        History of total size of file uploaded w/ threshold
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="pie-chart">
+        Pie chart of algorithm most used by all users
+      </div>
+      <div class="col-12">
+        <div class="col-12 algorithm-list">
+          User's most used algorithm (%usage) and stars rating
+        </div>
+        <div class="col-12 algorithm-list">
+          User's 2nd most used algorithm (%usage) and stars rating
+        </div>
+        <div class="col-12 algorithm-list">
+          User's 3rd most used algorithm (%usage) and stars rating
+        </div>
+      </div>
 
   </div>
-  <h1>Dashboard</h1>
-    <div>
-      <%= simple_form_for(@task) do |f| %>
-        <%= f.input :file, class: "btn btn-primary" %>
-        <%= f.button :submit, "Convert", class: "btn-primary" %>
-        <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
-      <% end %>
+  <div class="col-9" id="dashboard-main">
+    <div class="container">
+      <h1 class="col-12" id="dash-header">Dashboard</h1>
+        <% if @task.file.attached? %>
+            <%= link_to @task.file.blob.filename, rails_blob_path(@task.file, disposition: 'attachment') %>
+        <% end %>
+
     </div>
+  </div>
 </div>
