@@ -7,8 +7,9 @@
   </div>
   <div class="modal-body m-2">
     <h2 class="mb-5">Log into your account</h2>
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), remote: true) do |f| %>
       <%= f.error_notification %>
+      <div class="errors"></div>
       <div class="form-inputs">
         <%= f.input :email,
                     required: true,

@@ -22,14 +22,13 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'oauth#callback', as: 'oauth_callback'
   get '/auth/failure', to: 'oauth#failure', as: 'oauth_failure'
   get 'about', to: "pages#about", as: :about
-  get 'features', to: "pages#features", as: :features
   get 'faq', to: "pages#faq", as: :faq
   get 'dashboard', to: "pages#dashboard", as: :dashboard
   resources :tasks , only: [:create, :index, :show] do
     resources :feedbacks
   end
-  resources :algorithms, only: [:index, :show] 
-   
-  devise_for :users
+  resources :algorithms, only: [:index, :show]
+
+  devise_for :users, controllers: { sessions: 'users/sessions' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
