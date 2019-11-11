@@ -3,7 +3,7 @@ ruby '2.6.3'
 
 gem 'bootsnap', require: false
 gem 'devise'
-gem 'omniauth-linkedin-oauth2'
+gem 'omniauth-linkedin-oauth2', git: 'https://github.com/Devato/omniauth-linkedin-oauth2.git'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'

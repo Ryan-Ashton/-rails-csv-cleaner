@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/Devato/omniauth-linkedin-oauth2.git
+  revision: 57a86aaf25060e05f5e7bcf97a0197f6b3b0044d
+  specs:
+    omniauth-linkedin-oauth2 (0.1.5)
+      omniauth (~> 1.0)
+      omniauth-oauth2
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -113,8 +121,6 @@ GEM
     omniauth (1.9.0)
       hashie (>= 3.4.6, < 3.7.0)
       rack (>= 1.6.2, < 3)
-    omniauth-linkedin-oauth2 (1.0.0)
-      omniauth-oauth2
     omniauth-oauth2 (1.6.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
@@ -224,7 +230,7 @@ DEPENDENCIES
   font-awesome-sass (~> 5.6.1)
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
-  omniauth-linkedin-oauth2
+  omniauth-linkedin-oauth2!
   pg (~> 0.21)
   pry-byebug
   pry-rails

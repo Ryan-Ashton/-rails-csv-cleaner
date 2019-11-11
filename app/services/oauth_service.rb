@@ -1,3 +1,4 @@
+
 class OauthService
   attr_reader :auth_hash
 
@@ -6,9 +7,9 @@ class OauthService
   end
 
   def create_oauth_account!
-    unless oauth_account = OauthAccount.where(uid: @auth_hash[:uid]).first
+    # unless oauth_account = OauthAccount.where(uid: @auth_hash[:uid]).first
       oauth_account = OauthAccount.create!(oauth_account_params)
-    end
+    # end
     oauth_account
   end
 
