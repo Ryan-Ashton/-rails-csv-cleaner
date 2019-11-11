@@ -3,11 +3,7 @@
 
   </div>
   <h1>Dashboard</h1>
-    <div>
-      <%= simple_form_for(@task) do |f| %>
-        <%= f.input :file, class: "btn btn-primary" %>
-        <%= f.button :submit, "Convert", class: "btn-primary" %>
-        <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
-      <% end %>
-    </div>
+    <% if @task.file.attached? %>
+      <%= link_to @task.file.blob.filename, rails_blob_path(@task.file, disposition: 'attachment') %>
+    <% end %>
 </div>

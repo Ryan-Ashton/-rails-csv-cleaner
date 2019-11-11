@@ -1,10 +1,12 @@
 require 'csv'
 require 'pry-byebug'
+require 'tempfile'
 
 class FileConverter
 
   def initialize(file)
     @csv_blob = file
+    @temp_file = Tempfile.new('foo.csv')
   end
 
   ##########################################################
@@ -31,11 +33,13 @@ class FileConverter
       end
     end
 
-    csv_data = CSV.generate(headers: :first_row) do |csv|
+    CSV.open(@temp_file, 'wb') do |csv|
       lines.each do |line|
         csv << line
       end
     end
+
+    return @temp_file
 
     rescue Exception => e
       puts e
@@ -55,13 +59,13 @@ class FileConverter
       lines << row.map { |e| e.gsub(/ +?/, '') }
     end
 
-    csv_data = CSV.generate(headers: true) do |csv|
+    CSV.open(@temp_file, 'wb') do |csv|
       lines.each do |line|
         csv << line
       end
     end
 
-    return csv_data
+    return @temp_file
 
     rescue Exception => e
       puts e
@@ -81,13 +85,13 @@ class FileConverter
       lines << row.map { |e| e.gsub(/[\n\r +?]/, '') }
     end
 
-    csv_data = CSV.generate(headers: true) do |csv|
+    CSV.open(@temp_file, 'wb') do |csv|
       lines.each do |line|
         csv << line
       end
     end
 
-    return csv_data
+    return @temp_file
 
     rescue Exception => e
       puts e
@@ -106,13 +110,13 @@ class FileConverter
       lines << row.map! { |e| e.gsub(/[^A-Za-z]+/, '')}
     end
 
-    csv_data = CSV.generate(headers: true) do |csv|
+    CSV.open(@temp_file, 'wb') do |csv|
       lines.each do |line|
         csv << line
       end
     end
 
-    return csv_data
+    return @temp_file
 
     rescue Exception => e
       puts e
@@ -132,13 +136,13 @@ class FileConverter
       lines << row.map { |e| e.gsub(/ +?/, '') }
     end
 
-    csv_data = CSV.generate(headers: true) do |csv|
+    CSV.open(@temp_file, 'wb') do |csv|
       lines.each do |line|
         csv << line
       end
     end
 
-    return csv_data
+    return @temp_file
 
     rescue Exception => e
       puts e
@@ -160,13 +164,13 @@ class FileConverter
         lines << row
       end
 
-      csv_data = CSV.generate(headers: true) do |csv|
+      CSV.open(@temp_file, 'wb') do |csv|
         lines.each do |line|
           csv << line
         end
       end
 
-      return csv_data
+      return @temp_file
 
       rescue Exception
         return false
