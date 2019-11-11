@@ -7,7 +7,6 @@ class OauthController < ApplicationController
     begin
       oauth = OauthService.new(request.env['omniauth.auth'])
       p request.env
-      byebug
       if oauth_account = oauth.create_oauth_account!
         # redirect_to Config.provider_login_path
         redirect_to dashboard_path
