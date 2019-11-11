@@ -14,6 +14,7 @@
         <% end %>
       </div>
     </div>
+
   <% end %>
   <div class="row justify-content-between" id="dash-main-card">
     <div class="col-4">
@@ -40,6 +41,15 @@
           User's 3rd most used algorithm (%usage) and stars rating
         </div>
       </div>
+
+  </div>
+  <div class="col-9" id="dashboard-main">
+    <div class="container">
+      <h1 class="col-12" id="dash-header">Dashboard</h1>
+        <% if @task.file.attached? %>
+            <%= link_to @task.file.blob.filename, rails_blob_path(@task.file, disposition: 'attachment') %>
+        <% end %>
+
     </div>
   </div>
 </div>
