@@ -1,13 +1,12 @@
-<div class="container">
-  <div class="extra-container-margin">
-
-  </div>
-  <h1>Dashboard</h1>
-    <div>
-      <%= simple_form_for(@task) do |f| %>
-        <%= f.input :file, class: "btn btn-primary" %>
-        <%= f.button :submit, "Convert", class: "btn-primary" %>
-        <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
-      <% end %>
+<div class="row" id="dashboard-wrapper">
+  <div class="col-lg-3 col-md-3 d-none d-sm-block" id="dashboard-sidebar" style="background-image: linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.7)), url(https://images.unsplash.com/photo-1479292889369-1a48f234247e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);">
+    <div class="col-12">
+      <h1 id="sidebar-header">Sidebar</h1>
     </div>
+  </div>
+  <div class="col-9" id="dashboard-main">
+    <div class="container">
+      <h1 class="col-12" id="dash-header">Dashboard</h1>
+    </div>
+  </div>
 </div>
