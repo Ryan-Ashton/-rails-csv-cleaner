@@ -37,13 +37,15 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "sign up" %>
+        <%= f.button :submit, "Sign Up", class:"btn btn-info mt-4" %>
       </div>
     <% end %>
             <%#= render "devise/shared/links" %>
   </div>
   <div class="modal-footer mb-5">
-    <button type="button" class="btn btn-primary mx-2">Log in</button>
+    <button type="button" class="btn btn-primary mr-2" data-dismiss="modal" href="new_user_session_path" data-toggle="modal" data-target="#loginModal">
+      Log In
+    </button>
     <button type="button" class="btn btn-secondary mr-4" data-dismiss="modal">Close</button>
   </div>
 </div>

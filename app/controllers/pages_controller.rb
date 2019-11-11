@@ -9,5 +9,4 @@ class PagesController < ApplicationController
   def dashboard
     @task = current_user.tasks.last
   end
-
 end
