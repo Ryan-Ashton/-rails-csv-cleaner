@@ -30,6 +30,10 @@ class TasksController < ApplicationController
         csv_data = FileConverter.new(@task.file).white_space_left_right
       elsif @task.algorithm_id == 6
         csv_data = FileConverter.new(@task.file).remove_blank_columns
+      elsif @task.algorithm_id == 7
+        csv_data = FileConverter.new(@task.file).over_under
+      elsif @task.algorithm_id == 8
+        csv_data = FileConverter.new(@task.file).shared_column
       end
 
       if csv_data == false
