@@ -1,0 +1,18 @@
+//Specific CSS for your about page
+
+.container.about {
+   background-image: image-url("about_background-1.jpg");
+ 　background-attachment: fixed;
+}
+
+.card{
+	width: auto;
+	max-height: auto;
+	background-color: #f4f4f4;
+	object-fit: cover;
+}
+
+.card-img-top{
+    object-fit: cover;
+}
+
