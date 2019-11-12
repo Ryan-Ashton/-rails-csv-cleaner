@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @last_task = current_user.tasks.last
+    @task = current_user.tasks.last
     @tasks = current_user.tasks
   end
 end
