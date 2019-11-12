@@ -107,7 +107,7 @@ class FileConverter
     lines = []
 
     CSV.parse(@csv_blob.download, csv_options) do | row |
-      lines << row.map! { |e| e.gsub(/[^A-Za-z]+/, '')}
+      lines << row.map! { |e| e.gsub(/[^A-Za-z0-9.,]+/, '')}
     end
 
     CSV.open(@temp_file, 'wb') do |csv|

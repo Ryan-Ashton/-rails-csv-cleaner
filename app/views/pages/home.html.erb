@@ -51,19 +51,19 @@
       </div>
       <div class="row w-100">
         <div class="col-12 tile-body justify-content-between align-items-center"  id="collapse-1">
-          <p class="desc"><strong>Truncate Data</strong> algorithm will remove random empty rows from dataset</p>
+          <p class="desc">The <strong>Truncate Data</strong> algorithm will remove random empty rows from a dataset</p>
           <a type="button" class=" modal-form-btn upload_icon" data-id="1" data-name="Truncate Data" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-2">
-          <p class="desc"><strong>Header Spaces</strong> algorithm will remove spaces out of the headers.</p>
+          <p class="desc">The <strong>Header Spaces</strong> algorithm will remove white space out of your dataset headers - which is useful if you want to reload your csv file to a database.</p>
           <a type="button" class=" modal-form-btn upload_icon" data-id="2" data-name="Header Spaces" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-3">
-          <p class="desc"><strong>New Lines</strong> algorithm will remove new lines out of a cell.</p>
+          <p class="desc">The <strong>New Lines</strong> algorithm will remove /n (alt enter) out of a cell. These new lines are often put in by people who don't know how to use Excel :)</p>
           <a type="button" class=" modal-form-btn upload_icon" data-id="3"  data-name="New Lines" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
@@ -86,24 +86,24 @@
           <div class="algorithm-icon">
             <i class="fas fa-retweet"></i>
           </div>
-          Over Under
+          Blank Columns
         </div>
       </div>
       <div class="row w-100">
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-4">
-          <p class="desc">Data often gets messy by adding random symbols in the cells, <strong>Remove Symbols</strong> algorithm will remove all of that and just keep the text.</p>
+          <p class="desc">Data often gets messy with random symbols being added in cells. The <strong>Remove Symbols</strong> algorithm will remove all of that and just keep the letters of the alphabet and numbers (including decimal numbers).</p>
           <a type="button" class=" modal-form-btn upload_icon" data-id="4" data-name="Remove Symbols" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-5">
-          <p class="desc">If you have white space around the data in the columns, <strong>White Space</strong> algorithm will remove it.</p>
+          <p class="desc">If you have white space (space bar action) around the data you want within the cells, the <strong>White Space</strong> algorithm will remove it from your dataset.</p>
           <a type="button" class=" modal-form-btn upload_icon" data-id="5" data-name="White Space" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-6">
-          <p class="desc"><strong>Over Under</strong> algorithm will repeatedly move the 2nd row into a new 2nd column.</p>
+          <p class="desc">The <strong>Blank Columns</strong> algorithm will remove all the blank columns (pesky random extra columns) within your dataframe.</p>
           <a type="button" class=" modal-form-btn upload_icon" data-id="6"  data-name="Over Under" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
@@ -114,30 +114,31 @@
           <div class="algorithm-icon">
             <i class="fas fa-braille"></i>
           </div>
-          Shared Column
+          Over Under
         </div>
         <div class="col-3 home-secondary-tile text-center" data-id="8" id="#tile-8">
           <div class="algorithm-icon">
-            <i class="far fa-chart-bar"></i>
+          <i class="fas fa-grip-lines-vertical"></i>
           </div>
-          Report Format
+          Shared Column
         </div>
         <div class="col-3 home-secondary-tile text-center last-tile" data-id="9" id="#tile-9">
           <div class="algorithm-icon">
             <i class="fas fa-share-square"></i>
+            
           </div>
           Share our page
         </div>
       </div>
       <div class="row w-100">
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-7">
-          <p class="desc"><strong>Shared Column</strong> algorithm will take what is in one column and split it out into seperate columns by a seperator.</p>
+          <p class="desc">The <strong>Over Under</strong> algorithm will repeatedly move the 2nd row into a new 2nd column.</p>
           <a type="button" class=" modal-form-btn upload_icon" data-id="7" data-name="Shared Column" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-8">
-          <p class="desc"><strong>Report Format</strong> algorithm will rearrange your report into a dataset you can model from.</p>
+          <p class="desc">The <strong>Shared Column</strong> algorithm will take what is nested in one column and split it out into seperate columns (if it is seperated by a comma).</p>
           <a type="button" class=" modal-form-btn upload_icon" data-id="8" data-name="Report Format" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
