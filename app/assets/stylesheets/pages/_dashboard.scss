@@ -55,6 +55,29 @@
   justify-content: space-between
 }
 
+.prompt {
+  font-size: 36px;
+  text-decoration: none;
+  color: #15aabf;
+  opacity: 0.9;
+  margin: 10%;
+}
+
+#prompt:visited {
+  text-decoration: none;
+}
+
+#prompt:hover {
+  text-decoration: none;
+  // color: #15aabf;
+  opacity: 1;
+}
+
+#prompt:active {
+  text-decoration: none;
+  opacity: 1;
+}
+
 .fa-download {
   font-size: 48px;
   text-decoration: none;

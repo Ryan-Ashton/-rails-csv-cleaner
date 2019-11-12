@@ -1,18 +1,31 @@
 <!-- <div id="particles-js"></div> -->
 
 <div class="container home-grid">
-  <%# if @task  %>
-  <% if @task.file.attached? %>
+  <% if @task.nil?  %>
+    <div class="row justify-content-between align-items-center" id="download-box">
+      <div class="col-md-9 d-none d-md-block">
+        <h1 id="home-header">You haven't use any of our algorithm</h1>
+        <p>Start by uploading a CSV data you want to clean, and see what's gonna happen in a click.</p>
+      </div>
+      <div class="col-md-3 col-sm-12 text-center"> <!-- How to make it invisible on the sm device -->
+        <%= link_to root_path, class: "prompt"  do %>
+          <p>Give it a try!</p>
+        <% end %>
+        <!-- Once downloaded, change the icon with rating prompts? Javascript? -->
+      </div>
+    </div>
+  <% elsif @task.file.attached? %>
     <div class="row justify-content-between align-items-center" id="download-box">
       <div class="col-md-9 d-none d-md-block">
         <h1 id="home-header">Download your clean data here</h1>
-        <p>Make sure you save it to your computer, since we are not going to keep any file.</p>
+        <p>Make sure you save it to your computer, since we are not going to keep your file.</p>
       </div>
       <div class="col-md-3 col-sm-12 text-center"> <!-- How to make it invisible on the sm device -->
         <%= link_to rails_blob_path(@task.file, disposition: 'attachment') do %>
           <i class="fas fa-download"></i>
           <div id="filename"><%= @task.file.blob.filename %></div>
         <% end %>
+        <!-- Once downloaded, change the icon with rating prompts? -->
       </div>
     </div>
   <% end %>
@@ -31,29 +44,31 @@
         Pie chart of algorithm most used by all users
       </div>
       <div class="col-12">
-        <h3>Your most used algorithms</h3>
-        <!-- Replace skeleton below with working code: -->
-        <% counter = Hash.new 0 %>
-        <% @tasks.each { |task| counter[task.algorithm.name] += 1} %>
-        <% algorithm_rank = counter.sort_by { |_,v| -v } %>
-        <% total_tasks = algorithm_rank.map { |element| element[1]} %>
-        <% total = total_tasks.reduce(:+) %>
-        <% algorithm_rank.first(3).to_h.each do |key, value| %>
-          <div class="row algorithm-list">
-            <div class="col-md-1 d-none d-sm-block text-left mx-1">
-              <%= (value.fdiv(total) * 100).ceil() %>%
+        <% unless @task.nil?  %>
+          <h3>Your most used algorithms</h3>
+          <!-- Replace skeleton below with working code: -->
+          <% counter = Hash.new 0 %>
+          <% @user_tasks.each { |task| counter[task.algorithm.name] += 1} %>
+          <% algorithm_rank = counter.sort_by { |_,v| -v } %>
+          <% total_tasks = algorithm_rank.map { |element| element[1]} %>
+          <% total = total_tasks.reduce(:+) %>
+          <% algorithm_rank.first(3).to_h.each do |key, value| %>
+            <div class="row algorithm-list">
+              <div class="col-md-1 d-none d-sm-block text-left mx-1">
+                <%= (value.fdiv(total) * 100).ceil() %>%
+              </div>
+              <div class="col-md-5 col-sm-12 text-left mx-1">
+                <%= key %>
+              </div>
+              <div class="col-md-5 d-none d-md-block mx-2 text-right align-items-center">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+              </div>
             </div>
-            <div class="col-md-5 col-sm-12 text-left mx-1">
-              <%= key %>
-            </div>
-            <div class="col-md-5 d-none d-md-block mx-2 text-right align-items-center">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-              <i class="far fa-star"></i>
-            </div>
-          </div>
+          <% end %>
         <% end %>
       </div>
     </div>

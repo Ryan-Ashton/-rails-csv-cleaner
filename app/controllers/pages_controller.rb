@@ -4,10 +4,15 @@ class PagesController < ApplicationController
   def home
     @files_counter = Task.all.length
     @task = Task.new
+    if current_user
+      if current_user.tasks.last
+        current_user.tasks.last.file.purge
+      end
+    end
   end
 
   def dashboard
     @task = current_user.tasks.last
-    @tasks = current_user.tasks
+    @user_tasks = current_user.tasks
   end
 end
