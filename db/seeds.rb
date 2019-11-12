@@ -12,19 +12,20 @@ user_3 = User.create(email: "testme@test.com", password:"password", first_name: 
 puts "creating algorithms"
 truncate_data = Algorithm.create(name:"Truncate Data", description: "This will remove random empty rows from dataset")
 
-header_spaces = Algorithm.create(name:"Remove Header Spaces", description: "This will remove spaces out of the headers")
+header_spaces = Algorithm.create(name:"Header Spaces", description: "The Header Spaces algorithm will remove white space out of your dataset headers - which is useful if you want to reload your csv file to a database.")
 
-new_lines = Algorithm.create(name:"Remove New Lines from Cell", description: "This will remove new lines out of a cell")
+new_lines = Algorithm.create(name: "New Lines", description:"The New Lines algorithm will remove /n (alt enter) out of a cell. These new lines are often put in by people who don't know how to use Excel :)")
 
-symbols_around_data = Algorithm.create(name:"Remove Unwanted Symbols", description: "Data often gets messy by adding random symbols in the cells, this will remove all of that and just keep the text")
+symbols_around_data = Algorithm.create(name: "Remove Symbols", description:"Data often gets messy with random symbols being added in cells. The Remove Symbols algorithm will remove all of that and just keep the letters of the alphabet and numbers (including decimal numbers).")
 
-white_space_left_right = Algorithm.create(name:"Clear white spaces left/right", description: "If you have white space around the data in the columns, this will remove it")
+white_space_left_right = Algorithm.create(name:"White Space", description: "If you have white space (space bar action) around the data you want within the cells, the White Space algorithm will remove it from your dataset.")
 
-over_under = Algorithm.create(name:"Redistribute Single Column of Data", description: "This will repeatedly move the 2nd row into a new 2nd column")
+blank_columns = Algorithm.create(name:"Blank Columns", description: "The Blank Columns algorithm will remove all the blank columns (pesky random extra columns) within your dataframe.")
 
-shared_column = Algorithm.create(name:"Split single column into multiple columns", description: "This will take what is in one column and split it out into seperate columns by a seperator")
+over_under = Algorithm.create(name:"Over Under", description: "This will repeatedly move the 2nd row into a new 2nd column")
 
-report_format = Algorithm.create(name:"Turn report into dataset", description: "This will rearrange your report into a dataset you can model from")
+shared_column = Algorithm.create(name:"Shared Column", description: "The Shared Column algorithm will take what is nested in one column and split it out into seperate columns (if it is seperated by a comma).")
+
 
 # puts "creating Tasks!"
 
