@@ -177,7 +177,84 @@ class FileConverter
       end
     end
 
+    ##################################################
+
+    def over_under
+      begin
+
+      csv_options = { col_sep: ',', quote_char: '"' }
+    
+      arr1 = []
+      arr2 = []
+      lines = []
+      counter = 1
+      
+    
+      CSV.parse(@csv_blob.download, csv_options) do | row |  
+        
+        if counter.even? 
+            arr1 << row
+          else
+            arr2 << row
+        end
+          counter += 1
+      end
+    
+      
+      splitter = 0
+    
+      arr2.length.times do
+        if splitter == 0
+          lines << arr2[0]
+          splitter += 1
+        else 
+          lines << arr1[splitter.to_i] + arr2[splitter.to_i]
+        end
+      end
+      
+    
+      csv_data = CSV.open(@temp_file, 'wb') do |csv|
+        lines.each do |line|
+          csv << line
+        end
+      end
+
+      return @temp_file
+
+    rescue Exception
+      return false
+    end
   end
+
+    ###############################################
+
+    def shared_column
+      begin
+
+      csv_options = { col_sep: ',', quote_char: '"' }
+    
+      lines = []
+    
+      CSV.parse(@csv_blob.download, csv_options) do | row |
+        lines << row.map! { |e| e.split(",") }
+      end
+    
+      csv_data = CSV.open(@temp_file, 'wb') do |csv|
+        lines.each do |line|
+          line.each do |l|
+          csv << l
+          end
+        end
+      end
+
+      return @temp_file
+
+    rescue Exception
+      return false
+    end
+  end
+
+end
 
 
 
