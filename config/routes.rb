@@ -28,5 +28,6 @@ Rails.application.routes.draw do
 devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 get '/auth/:provider/callback', to: 'oauth#callback', as: 'oauth_callback'
 get '/auth/failure', to: 'oauth#failure', as: 'oauth_failure'
+post 'tasks/:id/download', to: 'tasks#download', as: :download
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

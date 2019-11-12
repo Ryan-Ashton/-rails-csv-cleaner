@@ -21,10 +21,10 @@
         <p>Make sure you save it to your computer, since we are not going to keep your file.</p>
       </div>
       <div class="col-md-3 col-sm-12 text-center"> <!-- How to make it invisible on the sm device -->
-        <%= link_to rails_blob_path(@task.file, disposition: 'attachment') do %>
-          <i class="fas fa-download"></i>
-          <div id="filename"><%= @task.file.blob.filename %></div>
-        <% end %>
+          <%= link_to  download_path(@task), method: :post do %>
+            <i class="fas fa-download"></i>
+            <div id="filename"><%= @task.file.blob.filename %></div>
+          <% end %>
         <!-- Once downloaded, change the icon with rating prompts? -->
       </div>
     </div>

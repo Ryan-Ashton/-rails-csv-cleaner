@@ -10,14 +10,10 @@ class TasksController < ApplicationController
   def create
     @task = Task.new
 
-    # byebug
     @algorithm = Algorithm.find(params[:task][:algorithm])
     @task.algorithm = @algorithm
     @task.file = params[:task][:file]
     @task.user = current_user
-
-    # Placeholder algorithm
-    # @task.algorithm = Algorithm.first
 
     if @task.save
       csv_data = nil
@@ -58,6 +54,12 @@ class TasksController < ApplicationController
   def new
   end
 
+  def download
+    @task = Task.find(params[:id])
+    @task.downloaded = true
+    @task.save
+    send_data @task.file.blob.download, filename: @task.file.blob.filename.to_s, disposition: :attachment
+  end
 
   # def task_params
   #   params.require(:task).permit(:file)
