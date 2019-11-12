@@ -39,7 +39,7 @@ class TasksController < ApplicationController
         @task.file.purge
         @task.file.attach(io: csv_data, filename: params[:task][:file].original_filename + "-fixed.csv", content_type: "text/csv")
         csv_data.close
-        flash[:notice] = "File conversion successful."
+        flash[:success] = "File conversion successful."
         redirect_to dashboard_path
         # send_data csv_data, filename: params[:task][:file].original_filename + "-fixed.csv", disposition: :attachment
       end

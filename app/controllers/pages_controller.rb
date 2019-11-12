@@ -4,7 +4,6 @@ class PagesController < ApplicationController
   def home
     @files_counter = Task.all.length
     @task = Task.new
-    raise
   end
 
   def dashboard
