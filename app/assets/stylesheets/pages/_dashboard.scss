@@ -4,9 +4,11 @@
 
 #download-box {
   margin-bottom: 4%;
-  padding: 2%;
+  padding: 4% 2%;
   border-radius: 10px;
   background-color: #f4f4f4;
+  opacity: 0.8;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // z-index: 1;
 }
 
@@ -16,41 +18,48 @@
   padding: 2%;
   border-radius: 10px;
   background-color: #f4f4f4;
+  opacity: 0.8;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // background-image: linear-gradient(300deg, #83ccd9, rgba(21,170,191,1));
 }
 
 .graph-card {
-  height: 36vh;
-  margin: 4% 0;
+  height: 46%;
+  margin: 4% 0 8% 0;
   padding: 2%;
-  border-radius: 6px;
+  border-radius: 4px;
   background-color: #ffffff;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .pie-chart {
-  height: 44vh;
+  height: 40vh;
   margin: 4% 0;
   padding: 2%;
-  border-radius: 6px;
+  border-radius: 4px;
   background-color: #f4f4f4;
 }
 
 .algorithm-list {
   margin: 2% 0;
   padding: 2%;
-  border-radius: 6px;
+  border-radius: 4px;
   background-image: linear-gradient(300deg, #83ccd9, rgba(21,170,191,1));
-  opacity:0.8;
+  // opacity:0.8;
   color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.dash-rating {
+  display: flex;
+  justify-content: space-between
 }
 
 .fa-download {
   font-size: 48px;
   text-decoration: none;
   color: #15aabf;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .fa-download:hover {
@@ -62,20 +71,20 @@
   text-decoration: none;
   color: #15aabf;
   margin-top: 4%;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
-a:visited {
+#filename:visited {
   text-decoration: none;
 }
 
-a:hover {
+#filename:hover {
   text-decoration: underline;
   color: #15aabf;
   opacity: 1;
 }
 
-a:active {
+#filename:active {
   text-decoration: none;
   opacity: 1;
 }
