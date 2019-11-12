@@ -17,11 +17,17 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'activestorage-validator'
-gem 'csv'
+gem 'omniauth'
+gem 'omniauth-linkedin-oauth2'
+# Put here to don't break in production
+gem 'pry-byebug'
+
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

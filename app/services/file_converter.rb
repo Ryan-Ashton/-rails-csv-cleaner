@@ -1,9 +1,9 @@
 require 'csv'
-<<<<<<< HEAD
-=======
+
+
 require 'pry-byebug'
 require 'tempfile'
->>>>>>> 3d87afd5dfaaeb5964e6e3aa2f6d04d6e247e892
+# >>>>>>> 3d87afd5dfaaeb5964e6e3aa2f6d04d6e247e892
 
 class FileConverter
 
