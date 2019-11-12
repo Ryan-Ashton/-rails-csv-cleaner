@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery prepend: true
   before_action :authenticate_user!
+  add_flash_types :success
 
   helper_method :resource_name, :resource, :devise_mapping, :resource_class
 
