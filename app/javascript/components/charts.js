@@ -28,7 +28,7 @@ var opt = {
       display: true,
       scaleLabel: {
         display: true,
-        labelString: 'Number of Rows'},
+        labelString: 'File Size'},
         gridLines: {
             display:false
         }
@@ -85,7 +85,7 @@ var uploadsData = {
           {
               fillColor: "#15aabf",
               strokeColor: "#15aabf",
-              data: [2, 3, 3, 3, 4, 2]
+              data: [20, 3, 3, 3, 4, 2]
           }
       ]
   };
