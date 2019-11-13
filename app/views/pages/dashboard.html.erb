@@ -49,16 +49,18 @@
   <div class="row justify-content-between" id="dash-main-card">
     <div class="col-lg-4 col-md-12">
       <div class="graph-card">
-        Number of uploads
-        Github contribution style? How?
+        <canvas id="UploadsChart" ></canvas>
+        <script src='Chart.min.js'></script>
       </div>
       <div class="graph-card">
-        History of total size of file uploaded w/ threshold
+        <canvas id="RowsChart" data-file-sizes="<%= @file_sizes %>" data-titles="<%= @file_names %>"></canvas>
+          <script src='Chart.min.js'></script>
       </div>
     </div>
     <div class="col-lg-8 col-md-4">
       <div class="pie-chart">
-        Pie chart of algorithm most used by all users
+        <canvas id="AlgoChart" ></canvas>
+          <script src='Chart.min.js'></script>
       </div>
       <div class="col-12">
         <% unless @task.nil?  %>
