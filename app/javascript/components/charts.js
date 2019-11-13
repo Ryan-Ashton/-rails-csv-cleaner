@@ -1,6 +1,6 @@
 import "chart.js";
 
-const initClickedTile = () => {
+const charts = () => {
   if (window.location.pathname == '/dashboard') {
 /////////////////////////////////////////////////////////////////////////////
     // Number of Rows Chart
@@ -76,18 +76,20 @@ const initClickedTile = () => {
 
     }
 
-      export { rowsChart };
-
     ///////////////////////////////////////////////////////////////////////////////
     // Uploads Over Time
-
+      const rowsUploadCanvas = document.getElementById('UploadsChart');
+      const loadingTime = JSON.parse(rowsUploadCanvas.dataset.fileLoadedTime);
+      const fileCountPerDay = loadingTime.map((key) => Object.keys(key)[0]);
+      const dayPerFile = loadingTime.map((key) => Object.values(key)[0]);
+      // const fileLoad = JSON.parse(rowsUploadCanvas.dataset.fileLoadedCount);
     var uploadsData = {
-      labels: ["06/11/2019", "07/11/2019", "08/11/2019", "09/11/2019", "10/11/2019", "11/11/2019"],
+      labels: fileCountPerDay,
           datasets: [
               {
                   fillColor: "#15aabf",
                   strokeColor: "#15aabf",
-                  data: [20, 3, 3, 3, 4, 2]
+                  data: dayPerFile
               }
           ]
       };
@@ -151,20 +153,23 @@ const initClickedTile = () => {
         });
     }
 
-      export { uploadsChart };
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
     // Algorithms Used
 
+      const rowsAlgoChart = document.getElementById('AlgoChart');
+      const algorithm = JSON.parse(rowsAlgoChart.dataset.algorithmName);
+      const algorithmLabels = algorithm.map(key => Object.keys(key)[0]);
+      const algorithmCount = algorithm.map(key => Object.values(key)[0])
     var ctx2 = document.getElementById("AlgoChart")
     if (ctx2) {
         ctx2 = ctx2.getContext('2d');
         var algoChart = new Chart(ctx2, {
           type: 'pie',
           data: {
-            labels: ["Green", "Blue", "Gray", "Purple", "Yellow", "Red", "Black"],
+              labels: algorithmLabels,
             datasets: [{
-            backgroundColor: [ /* backgroundColor is optional */
+            backgroundColor: [ /* backgroundColor is mandatory */
                 "#2ecc71",
                 "#3498db",
                 "#95a5a6",
@@ -173,15 +178,12 @@ const initClickedTile = () => {
                 "#e74c3c",
                 "#34495e"
             ],
-            data: [12, 19, 3, 17, 28, 24, 7]
+                data: algorithmCount
         }]
           }
         });
     }
   }
-   export { algoChart };
-
+}
    ////////////////////////////////////////////////////////////////////
-
-
-
+export { charts };

@@ -49,7 +49,7 @@
   <div class="row justify-content-between" id="dash-main-card">
     <div class="col-lg-4 col-md-12">
       <div class="graph-card">
-        <canvas id="UploadsChart" ></canvas>
+        <canvas id="UploadsChart" data-file-loaded-time="<%= @data_loaded.to_json %>"></canvas>
         <script src='Chart.min.js'></script>
       </div>
       <div class="graph-card">
@@ -59,7 +59,7 @@
     </div>
     <div class="col-lg-8 col-md-4">
       <div class="pie-chart">
-        <canvas id="AlgoChart" ></canvas>
+        <canvas id="AlgoChart" data-algorithm-name="<%= @algorithm_used.to_json %>"></canvas>
           <script src='Chart.min.js'></script>
       </div>
       <div class="col-12">
