@@ -2,14 +2,17 @@ import "chart.js";
 
 /////////////////////////////////////////////////////////////////////////////
 // Number of Rows Chart
+const rowsChartCanvas = document.getElementById('RowsChart');
+const fileSizes = JSON.parse(rowsChartCanvas.dataset.fileSizes);
+const fileName = JSON.parse(rowsChartCanvas.dataset.titles);
 
 var rowChartData = {
-  labels: ["File 1", "File 2", "File 3", "File 4", "File 5", "File 6"],
+  labels: fileName,
       datasets: [
           {
               fillColor: "#15aabf",
               strokeColor: "#15aabf",
-              data: [60, 80, 81, 56, 55, 40]
+              data: fileSizes
           }
       ]
   };
@@ -61,12 +64,15 @@ var opt = {
       }
   }
 };
-var rowsChart = document.getElementById("RowsChart"),
-   myRowChart = new Chart(rowsChart, {
-      type: 'horizontalBar',
-      data: rowChartData,
-      options: opt
-   });
+var rowsChart = document.getElementById("RowsChart");
+if (rowsChart) {
+  var myRowChart = new Chart(rowsChart, {
+    type: 'horizontalBar',
+    data: rowChartData,
+    options: opt
+ });
+
+}
 
    export { rowsChart };
 
@@ -134,37 +140,42 @@ var opt1 = {
       }
   }
 };
-var uploadsChart = document.getElementById("UploadsChart"),
-   myLineChart = new Chart(uploadsChart, {
-      type: 'line',
-      data: uploadsData,
-      options: opt1
-   });
+var uploadsChart = document.getElementById("UploadsChart")
+if (uploadsChart) {
+    var myLineChart = new Chart(uploadsChart, {
+       type: 'line',
+       data: uploadsData,
+       options: opt1
+    });
+}
 
    export { uploadsChart };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Algorithms Used
 
-var ctx2 = document.getElementById("AlgoChart").getContext('2d');
-var algoChart = new Chart(ctx2, {
-  type: 'pie',
-  data: {
-    labels: ["Green", "Blue", "Gray", "Purple", "Yellow", "Red", "Black"],
-    datasets: [{
-    backgroundColor: [ /* backgroundColor is optional */
-        "#2ecc71",
-        "#3498db",
-        "#95a5a6",
-        "#9b59b6",
-        "#f1c40f",
-        "#e74c3c",
-        "#34495e"
-    ], 
-    data: [12, 19, 3, 17, 28, 24, 7]
-}]
-  }
-});
+var ctx2 = document.getElementById("AlgoChart")
+if (ctx2) {
+    ctx2 = ctx2.getContext('2d');
+    var algoChart = new Chart(ctx2, {
+      type: 'pie',
+      data: {
+        labels: ["Green", "Blue", "Gray", "Purple", "Yellow", "Red", "Black"],
+        datasets: [{
+        backgroundColor: [ /* backgroundColor is optional */
+            "#2ecc71",
+            "#3498db",
+            "#95a5a6",
+            "#9b59b6",
+            "#f1c40f",
+            "#e74c3c",
+            "#34495e"
+        ], 
+        data: [12, 19, 3, 17, 28, 24, 7]
+    }]
+      }
+    });
+}
 
    export { algoChart };
 

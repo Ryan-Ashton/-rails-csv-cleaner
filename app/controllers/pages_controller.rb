@@ -10,5 +10,7 @@ class PagesController < ApplicationController
   def dashboard
     @task = current_user.tasks.last
     @user_tasks = current_user.tasks
+    @file_sizes = @user_tasks.map { |task| task.input_file_size }
+    @file_names = @user_tasks.map { |task| task.title }
   end
 end
