@@ -1,14 +1,16 @@
 class FeedbacksController < ApplicationController
-
   before_action :set_feedback, only: [:show, :edit]
-
-
-  def new
-  end
 
   def create
     @feedback = Feedback.new(feedback_params)
-    @feedback.save
+    @task = Task.find(params[:task_id])
+    @feedback.task = @task
+    if @feedback.save
+      flash[:success] = "Thank you for your feedback!"
+    else
+      flash[:alert] = "Something went wrong."
+    end
+    redirect_to dashboard_path
   end
 
   def show
@@ -22,12 +24,12 @@ class FeedbacksController < ApplicationController
   end
 
   private
+
   def feedback_params
-    params.require(:feedback).permit(:rating, :comments)
+    params.require(:feedback).permit(:rating)
   end
 
   def set_feedback
     @feedback = Feedback.find(params[:id])
   end
-
 end
