@@ -28,9 +28,45 @@ body {
   color: $light-blue;
 }
 
-.placeholder-link {
-  font-size: 18px;
+#btn-linkedin {
+  font-size: 32px;
   color: #15aabf;
   opacity: 0.9;
-  margin: 40px;
+  text-decoration: none;
+}
+
+#btn-linkedin:visited {
+  text-decoration: none;
+}
+
+#btn-linkedin:hover {
+  text-decoration: none;
+  color: #15aabf;
+  opacity: 1;
+}
+
+#btn-linkedin:active {
+  text-decoration: none;
+  opacity: 1;
+}
+
+#text-share {
+  color: #15aabf;
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+#text-share:visited {
+  text-decoration: none;
+}
+
+#text-share:hover {
+  text-decoration: none;
+  color: #15aabf;
+  opacity: 1;
+}
+
+#text-share:active {
+  text-decoration: none;
+  opacity: 1;
 }
