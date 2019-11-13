@@ -10,6 +10,7 @@ user_2 = User.create(email: "test@test.com", password:"password", first_name: "R
 user_3 = User.create(email: "testme@test.com", password:"password", first_name: "Ted", last_name: "Talk", profession: "Speaker", location: "USA")
 
 puts "creating algorithms"
+
 truncate_data = Algorithm.create(name:"Truncate Data", description: "This will remove random empty rows from dataset")
 
 header_spaces = Algorithm.create(name:"Header Spaces", description: "The Header Spaces algorithm will remove white space out of your dataset headers - which is useful if you want to reload your csv file to a database.")
@@ -47,3 +48,20 @@ shared_column = Algorithm.create(name:"Shared Column", description: "The Shared 
 
 # feed4 = Feedback.create(rating: 5, comments: "Nice!", task_id: sesh_4)
 
+# filename1 = "data23"
+# filename2 = "data93"
+# filename3 = "data43"
+# filename4 = "data83"
+# filename5 = "data43"
+
+# sesh_1 = Task.create(title: filename1, user_id: user_1, algorithm_id: truncate_data, input_file_size: 2345.0, submitted: true, file: filename1, downloaded: true)
+
+# sesh_2 = Task.create(title: filename2, user_id: user_1, algorithm_id: blank_columns, input_file_size: 4356.0, submitted: true, file: filename2, downloaded: true)
+
+# sesh_3 = Task.create(title: filename3, user_id: user_1, algorithm_id: symbols_around_data, input_file_size: 6587.0, submitted: true, file: filename3, downloaded: true)
+
+# sesh_4 = Task.create(title: filename4, user_id: user_1, algorithm_id: header_spaces, input_file_size: 2222.0, submitted: true, file: filename4, downloaded: true)
+
+# sesh_5 = Task.create(title: filename5, user_id: user_1, algorithm_id: truncate_data, input_file_size: 8975.0, submitted: true, file: filename5, downloaded: true)
+
+ 
