@@ -1,95 +1,118 @@
 <div class="container about">
   <div class="extra-container-margin">
-  
-  </div>	
-  <h1>About</h1>
-  
-    <div class="row h-100">
-		<div class="section1 d-flex flex-row　mt-5">	
-			<div class="col-lg-6 col-md-6 col-sm-12 section1_description home-main-tile">
-				<h2>Easy To Use Data Cleaning Tool</h2>
-				<p>It all started out of frustration… Why is data so messy all the time and why do we spend most of our time cleaning data instead of deriving insights?</p> 
-
-					<p>For years I have been developing excel macros and python scripts to clean datasets, but what if you could outsource the heavy lifting to a website?</p> 
-					
-					<p>Meet CSV Cleaner – A tool that can clean common messy data problems and save you time in your normal work hours. Will we get it right every time? Probably not, which is why we ask you to rate the performance so we can continually improve the algorithms!</p>
-					<p>Please feel free to join the site with your LinkedIn profile and utilise this tool as much as you want!
-					 </p>
-				<h4>For professionals who want to save time </h4>
-			</div>
-			<div class=" my-auto col-lg-6 col-md-6 d-none d-sm-block image_section1">
-				<%= image_tag('section1.jpg') %>
-			</div>
-		</div>    
-	</div>
-   
-    <div class="row h-100">
-	    <div class="section2 d-flex flex-row mt-5">	    
-			<div class="my-auto col-lg-6 col-md-6 d-none d-sm-block">
-				<%= image_tag('section2.jpg') %>
- 			</div>			  
-			<div class="col-lg-6 col-md-6 col-sm-12 h-100 section2_description home-main-tile">
-				<h2>One more thing...</h2>
-				<p>This project couldn’t have been made possible without the help of 3 other talented individuals. We all met together at a coding bootcamp called “Le Wagon” and after presenting the solution at a pitch night, we all agreed this project had potential.</p>
-				<p>There is messy data everywhere - we have all experienced it at one point in our career. Here was an opportunity to fix it. After many late nights and intense (but collaborative) discussions we were able to develop this tool for you</p>
-				<p>Please feel free to connect with us on LinkedIn, we’d love to hear from you</p>
-				
-				<h4>Some of us may be available for freelance projects</h4>
-			</div>	
+	  </div>	
+	  <h1>About</h1>
+	  <div class="container_whole_contents mt-5">
+	<!--section1 (easy to use section) -->
+	    <div class="row h-100 home-main-tile">
+			<div class="section1 d-flex flex-row　mt-5">	
+				<div class="col-lg-6 col-md-6 col-sm-12 my-auto section1_description">
+					<h2 class="card_title">Easy To Use Data Cleaning Tool</h2>
+					<h4 class="card_sub_title">For professionals who want to save time </h4>
+	<!-- trigger for easy to use message -->
+	 　　　　				<p>
+						  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#easy_to_use_message" aria-expanded="false" aria-controls="easy_to_use_message">
+						    Learn more
+						  </button>				
+				        </p>
+	<!--easy to use message coontents -->
+						<div class="collapse" id="easy_to_use_message">
+						  <div class="card card-body">
+						    <p>It all started out of frustration… Why is data so messy all the time and why do we spend most of our time cleaning data instead of deriving insights?</p> 
+						    <p>For years I have been developing excel macros and python scripts to clean datasets, but what if you could outsource the heavy lifting to a website?</p> 
+						    <p>Meet <strong>CSV Cleaner</strong> – A tool that can clean common messy data problems and save you time in your normal work hours. Will we get it right every time? Probably not, which is why we ask you to rate the performance so we can continually improve the algorithms!</p>
+						    <p>Please feel free to join the site with your LinkedIn profile and utilise this tool as much as you want!</p>
+						  </div>
+						</div>				
+				</div>
+	<!--section1 image -->		
+	 			<div class="my-auto col-lg-6 col-md-6 d-none d-sm-block image_section1">
+					<%= image_tag('section1.jpg') %>
+				</div>
+			</div>    
 		</div>
-    </div>
 
-    <div class ="row h-100">
-	    <div class ="section3 mt-5 mb-5"> 
-					  <div class="section_discription">				      
-						<h3>Learn more about our team!</h3>
-					  </div>	
+	<!--section2 (one more thing section) -->
+	<!--section2 image> --> 
+	        <div class="row h-100 home-main-tile mt-5">
+		    <div class="section2 d-flex flex-row mt-5">	    
+				<div class="my-auto col-lg-6 col-md-6 d-none d-sm-block image_section2">
+					<%= image_tag('section2.jpg') %>
+	 			</div>			  
+				<div class="mt-5 col-lg-6 col-md-6 col-sm-12 h-100 section2_description">
+					<h2 class="card_title">One more thing...</h2>
+					<h4 class="card_sub_title">Some of us may be available for freelance projects</h4>
 
-				<div class="card-deck">
-					<div class="card">
-						<%= image_tag'person1.jpg',class:"card-img-top"	%>
-						<div class="card-body">
-							<h6 class="card-title">Sisi Frolensia</h6>
-							<p class="card-text">Civil engineering specialist</p>
+	<!--trigger for one more thing message -->
+						<p>
+						  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#one_more_thing_message" aria-expanded="false" aria-controls="one_more_thing_message">
+						    Learn more
+						  </button>
+						</p>
+						<div class="collapse" id="one_more_thing_message">
+	<!--one more thing message contents -->
+						  <div class="card card-body">
+							<p>This project couldn’t have been made possible without the help of 3 other talented individuals. We all met together at a coding bootcamp called <strong>“Le Wagon”</strong>and after presenting the solution at a pitch night, we all agreed this project had potential.</p>
+							<p>There is messy data <strong>everywhere</strong> - we have all experienced it at one point in our career. Here was an opportunity to fix it. After many late nights and intense (but collaborative) discussions we were able to develop this tool for you</p>
+							<p>Please feel free to connect with us on LinkedIn, we’d love to hear from you</p>
+						  </div>
+						</div>				
+				</div>	
+			</div>
+	    </div>
+	<!--section3(team introduce section-->
+	    <div class ="row h-100">
+		    <div class ="section3 mt-5 mb-5"> 
+						  <div class="section_discription">				      
+							<h3>Our team</h3>
+						  </div>	
+
+					<div class="card-deck">
+						<div class="card">
+							<%= image_tag'person1.jpg',class:"card-img-top"	%>
+							<div class="card-body">
+								<h6 class="card-title">Sisi Frolensia</h6>
+								<p class="card-text">Civil engineering specialist</p>
+						    </div>
+							<div class="card-footer">
+								<a href="https://www.linkedin.com/in/sisi-florensia-8738b515/" target="_blank" class="btn btn-primary">LinkedIn Page</a>
+							</div>
 					    </div>
-						<div class="card-footer">
-							<a href="https://www.linkedin.com/in/sisi-florensia-8738b515/" target="_blank" class="btn btn-primary">LEARN MORE</a>
-						</div>
-				    </div>
 
-					<div class="card">
-						<%= image_tag'person2.jpg',class:"card-img-top" %>
-						<div class="card-body">
-							<h6 class="card-title">Ryan Ashton</h6>
-							<p class="card-text">Data specialist</p>
+						<div class="card">
+							<%= image_tag'person2.jpg',class:"card-img-top" %>
+							<div class="card-body">
+								<h6 class="card-title">Ryan Ashton</h6>
+								<p class="card-text">Data specialist</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://au.linkedin.com/in/ryan-mark-ashton" target="_blank" class="btn btn-primary">LinkedIn Page</a>
+							</div>
 						</div>
-						<div class="card-footer">
-							<a href="https://au.linkedin.com/in/ryan-mark-ashton" target="_blank" class="btn btn-primary">LEARN MORE</a>
-						</div>
-					</div>
 
-					<div class="card">					
-						<%= image_tag'person3.jpg',class:"card-img-top" %>
-						<div class="card-body">
-							<h6 class="card-title">Sebastian Bausch</h6>
-							<p class="card-text">Security specialist</p>
+						<div class="card">					
+							<%= image_tag'person3.jpg',class:"card-img-top" %>
+							<div class="card-body">
+								<h6 class="card-title">Sebastian Bausch</h6>
+								<p class="card-text">Security specialist</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://www.linkedin.com/in/sbausch" target="_blank" class="btn btn-primary">LinkedIn Page</a>
+							</div>
 						</div>
-						<div class="card-footer">
-							<a href="https://www.linkedin.com/in/sbausch" target="_blank" class="btn btn-primary">LEARN MORE</a>
-						</div>
-					</div>
 
-					<div class="card">				
-						<%= image_tag'person4.jpg' ,class:"card-img-top" %>
-						<div class="card-body">
-							<h6 class="card-title">Keiichi Fujimaki</h6>
-							<p class="card-text">SCM specialist</p>
+						<div class="card">				
+							<%= image_tag'person4.jpg' ,class:"card-img-top" %>
+							<div class="card-body">
+								<h6 class="card-title">Keiichi Fujimaki</h6>
+								<p class="card-text">SCM specialist</p>
+							</div>
+							<div class="card-footer">
+								<a href="https://www.linkedin.com/in/keiichi-fujimaki-1a2445191/" target="_blank" class="btn btn-primary">LinkedIn Page</a>
+							</div>
 						</div>
-						<div class="card-footer">
-							<a href="https://www.linkedin.com/in/keiichi-fujimaki-1a2445191/" target="_blank" class="btn btn-primary">LEARN MORE</a>
-						</div>
-					</div>
-				</div>			   
-        </div>
-    </div>
+				    </div>		
+	            </div>			   
+	        </div>
+	    </div>
 </div>
