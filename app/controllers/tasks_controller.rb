@@ -1,3 +1,5 @@
+require 'byebug'
+
 class TasksController < ApplicationController
   def index
 
@@ -9,11 +11,11 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new
-
     @algorithm = Algorithm.find(params[:task][:algorithm])
     @task.algorithm = @algorithm
     @task.file = params[:task][:file]
     @task.user = current_user
+    @task.filesize = params[:task][:file].tempfile.size
 
     if @task.save
       csv_data = nil
