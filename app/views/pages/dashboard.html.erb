@@ -27,10 +27,10 @@
             <div id="filename"><%= @task.file.blob.filename %></div>
           <% end %>
         </div>
-        <div class="col-md-4 col-sm-12 text-center my-1" id="rating-js">
+        <div class="col-md-4 col-sm-12 text-center my-1 d-none" id="rating-js">
           <!-- Once downloaded, change the icon with rating prompts? -->
-          <p class="d-none" id="rating-text">How was your experience using <strong><%= @task.algorithm.name %></strong> algorithm?</p>
-          <%= simple_form_for([@task, @feedback], html: { class: "feedback_form rating-form d-none mx-auto", id: "rating-stars" }) do |f| %>
+          <p id="rating-text">How was your experience using <strong><%= @task.algorithm.name %></strong> algorithm?</p>
+          <%= simple_form_for([@task, @feedback], html: { class: "feedback_form rating-form mx-auto", id: "rating-stars" }) do |f| %>
             <%= f.input :rating, collection: (1..5).to_a, label: false %>
             <%= f.submit class: "d-none" %>
           <% end %>
@@ -57,7 +57,7 @@
           <script src='Chart.min.js'></script>
       </div>
     </div>
-    <div class="col-lg-8 col-md-4">
+    <div class="col-lg-8 col-md-12">
       <div class="pie-chart">
         <canvas id="AlgoChart" data-algorithm-name="<%= @algorithm_used.to_json %>"></canvas>
           <script src='Chart.min.js'></script>
@@ -71,21 +71,30 @@
           <% algorithm_rank = counter.sort_by { |_,v| -v } %>
           <% total_tasks = algorithm_rank.map { |element| element[1]} %>
           <% total = total_tasks.reduce(:+) %>
-          <% algorithm_rank.first(3).to_h.each do |key, value| %>
+          <% algorithm_rank.to_h.each do |key, value| %>
             <div class="row algorithm-list">
-              <div class="col-md-1 d-none d-sm-block text-left mx-1">
-                <%= (value.fdiv(total) * 100).ceil() %>%
-              </div>
-              <div class="col-md-5 col-sm-12 text-left mx-1">
+              <div class="col-md-8 col-sm-12 text-left mx-1">
                 <%= key %>
               </div>
-              <div class="col-md-5 d-none d-md-block mx-2 text-right align-items-center">
+              <div class="col-md-2 d-none d-md-block text-right px-0">
+                <%#= (value.fdiv(total) * 100).ceil() %><!-- % -->
+                <%= value %>
+              </div>
+              <div class="col-md-1 d-none d-md-block text-left pl-1 px-0">
+                <%#= (value.fdiv(total) * 100).ceil() %><!-- % -->
+                <% if value > 1 %>
+                  <%= "times" %>
+                <% else %>
+                  <%= "time" %>
+                <% end %>
+              </div>
+<!--               <div class="col-md-5 d-none d-md-block mx-2 text-right align-items-center">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star-half-alt"></i>
                 <i class="far fa-star"></i>
-              </div>
+              </div> -->
             </div>
           <% end %>
         <% end %>
