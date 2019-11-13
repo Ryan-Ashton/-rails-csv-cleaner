@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   end
   resources :algorithms, only: [:index, :show]
 
-devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", sessions: "users/sessions" }
 get '/auth/:provider/callback', to: 'oauth#callback', as: 'oauth_callback'
 get '/auth/failure', to: 'oauth#failure', as: 'oauth_failure'
 post 'tasks/:id/download', to: 'tasks#download', as: :download
