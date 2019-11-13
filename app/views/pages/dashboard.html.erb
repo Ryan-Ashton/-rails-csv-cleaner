@@ -26,18 +26,26 @@
             <div id="filename"><%= @task.file.blob.filename %></div>
           <% end %>
         <!-- Once downloaded, change the icon with rating prompts? -->
-        <div id="rating-yellow">
+        <p id="rating-text">How was your experience using <%= @task.algorithm.name %> algortihm?</p>
+        <select id="example">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+<!--         <div id="rating-yellow">
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
           <i class="far fa-star"></i>
-        </div>
+        </div> -->
       </div>
     </div>
   <% end %>
   <div class="row justify-content-between" id="dash-main-card">
-    <div class="col-4">
+    <div class="col-lg-4 col-md-12">
       <div class="graph-card">
         Number of uploads
         Github contribution style? How?
@@ -46,7 +54,7 @@
         History of total size of file uploaded w/ threshold
       </div>
     </div>
-    <div class="col-8">
+    <div class="col-lg-8 col-md-4">
       <div class="pie-chart">
         Pie chart of algorithm most used by all users
       </div>
@@ -81,3 +89,15 @@
     </div>
   </div>
 </div>
+
+
+<!-- Script to run live rating -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="jquery.barrating.min.js"></script>
+<!-- <script type="text/javascript">
+   $(function() {
+      $('#example').barrating({
+        theme: 'fontawesome-stars'
+      });
+   });
+</script> -->

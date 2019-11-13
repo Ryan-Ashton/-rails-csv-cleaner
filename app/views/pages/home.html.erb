@@ -6,7 +6,7 @@
       <h1 id="home-header">Let us handle those messy files for you</h1>
     </div>
     <div class="col-lg-6 d-none d-lg-block text-right"> <!-- How to make it invisible on the sm device -->
-      <h2 id="csv-counter">#<%= @files_counter %></h2>
+      <h2 id="csv-counter"><%= @files_counter %></h2>
       <p>CSV files have been cleaned to date</p>
     </div>
   </div>
@@ -82,7 +82,7 @@
         </div>
         <div class="col-3 home-secondary-tile text-center" data-id="6" id="#tile-6">
           <div class="algorithm-icon">
-            <i class="fas fa-retweet"></i>
+            <i class="fas fa-braille"></i>
           </div>
           Blank Columns
         </div>
@@ -110,7 +110,7 @@
       <div class="row  justify-content-between align-items-end w-100 mt-2">
         <div class="col-3 home-secondary-tile text-center" data-id="7" id="#tile-7">
           <div class="algorithm-icon">
-            <i class="fas fa-braille"></i>
+            <i class="fas fa-retweet"></i>
           </div>
           Over Under
         </div>
@@ -136,16 +136,16 @@
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-8">
-          <p class="desc">The <strong>Shared Column</strong> algorithm will take what is nested in one column and split it out into seperate columns (if it is seperated by a comma).</p>
-          <a class="upload_icon" data-id="8" data-name="Report Format">
+          <p class="desc">The <strong>Shared Column</strong> algorithm will take what is nested in one column and split it out into separate columns (if it is separated by a comma).</p>
+          <a type="button" class=" modal-form-btn upload_icon" data-id="8" data-name="Report Format" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-9">
           <p class="desc">Help other analysts by letting them know the easiest way to clean their data!</p>
-          <p class="placeholder-link text-center" data-id="9">
-            LinkedIn share button here
-          </p>
+          <a class="mx-auto" id="text-share" type="button" href="https://www.linkedin.com/sharing/share-offsite/?url=https://csv-cleaner.herokuapp.com" data-id="9">
+             <%= render 'shared/btn_share' %>
+          </a>
         </div>
       </div>
     </div>
