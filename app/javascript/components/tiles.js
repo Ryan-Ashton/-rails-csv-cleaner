@@ -14,7 +14,7 @@ const initClickedTile = () => {
       tile.addEventListener('click', (e) => {
         const id = e.currentTarget.dataset.id;
         if (id > 6) {
-          document.documentElement.scrollTo({top: 150, behavior: 'smooth'});
+          document.documentElement.scrollTo({top: 200, behavior: 'smooth'});
         } else if (id > 3){
           document.documentElement.scrollTo({top: 120, behavior: 'smooth'});
         } else {
