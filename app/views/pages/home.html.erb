@@ -6,12 +6,10 @@
       <h1 id="home-header">Let us handle those messy files for you</h1>
     </div>
     <div class="col-lg-6 d-none d-lg-block text-right"> <!-- How to make it invisible on the sm device -->
-      <h2 id="csv-counter">#<%= @files_counter %></h2>
+      <h2 id="csv-counter"><%= @files_counter %></h2>
       <p>CSV files have been cleaned to date</p>
     </div>
   </div>
-
-
 
   <div class="row justify-content-between my-4">
     <div class="col-md-4 col-sm-12 d-none d-sm-block home-main-tile">
@@ -52,19 +50,19 @@
       <div class="row w-100">
         <div class="col-12 tile-body justify-content-between align-items-center"  id="collapse-1">
           <p class="desc">The <strong>Truncate Data</strong> algorithm will remove random empty rows from a dataset</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="1" data-name="Truncate Data" data-toggle="modal" data-target="#formModal">
+          <a class="upload_icon" data-id="1" data-name="Truncate Data">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-2">
           <p class="desc">The <strong>Header Spaces</strong> algorithm will remove white space out of your dataset headers - which is useful if you want to reload your csv file to a database.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="2" data-name="Header Spaces" data-toggle="modal" data-target="#formModal">
+          <a class="upload_icon" data-id="2" data-name="Header Spaces">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-3">
           <p class="desc">The <strong>New Lines</strong> algorithm will remove /n (alt enter) out of a cell. These new lines are often put in by people who don't know how to use Excel :)</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="3"  data-name="New Lines" data-toggle="modal" data-target="#formModal">
+          <a class="upload_icon" data-id="3"  data-name="New Lines">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
@@ -84,7 +82,7 @@
         </div>
         <div class="col-3 home-secondary-tile text-center" data-id="6" id="#tile-6">
           <div class="algorithm-icon">
-            <i class="fas fa-retweet"></i>
+            <i class="fas fa-braille"></i>
           </div>
           Blank Columns
         </div>
@@ -92,19 +90,19 @@
       <div class="row w-100">
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-4">
           <p class="desc">Data often gets messy with random symbols being added in cells. The <strong>Remove Symbols</strong> algorithm will remove all of that and just keep the letters of the alphabet and numbers (including decimal numbers).</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="4" data-name="Remove Symbols" data-toggle="modal" data-target="#formModal">
+          <a class="upload_icon" data-id="4" data-name="Remove Symbols">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-5">
           <p class="desc">If you have white space (space bar action) around the data you want within the cells, the <strong>White Space</strong> algorithm will remove it from your dataset.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="5" data-name="White Space" data-toggle="modal" data-target="#formModal">
+          <a class="upload_icon" data-id="5" data-name="White Space">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-6">
           <p class="desc">The <strong>Blank Columns</strong> algorithm will remove all the blank columns (pesky random extra columns) within your dataframe.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="6"  data-name="Over Under" data-toggle="modal" data-target="#formModal">
+          <a class="upload_icon" data-id="6"  data-name="Over Under">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
@@ -112,7 +110,7 @@
       <div class="row  justify-content-between align-items-end w-100 mt-2">
         <div class="col-3 home-secondary-tile text-center" data-id="7" id="#tile-7">
           <div class="algorithm-icon">
-            <i class="fas fa-braille"></i>
+            <i class="fas fa-retweet"></i>
           </div>
           Over Under
         </div>
@@ -125,7 +123,7 @@
         <div class="col-3 home-secondary-tile text-center last-tile" data-id="9" id="#tile-9">
           <div class="algorithm-icon">
             <i class="fas fa-share-square"></i>
-            
+
           </div>
           Share our page
         </div>
@@ -133,53 +131,50 @@
       <div class="row w-100">
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-7">
           <p class="desc">The <strong>Over Under</strong> algorithm will repeatedly move the 2nd row into a new 2nd column.</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="7" data-name="Shared Column" data-toggle="modal" data-target="#formModal">
+          <a class="upload_icon" data-id="7" data-name="Shared Column">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-8">
-          <p class="desc">The <strong>Shared Column</strong> algorithm will take what is nested in one column and split it out into seperate columns (if it is seperated by a comma).</p>
-          <a type="button" class=" modal-form-btn upload_icon" data-id="8" data-name="Report Format" data-toggle="modal" data-target="#formModal">
+          <p class="desc">The <strong>Shared Column</strong> algorithm will take what is nested in one column and split it out into separate columns (if it is separated by a comma).</p>
+          <a class="upload_icon" data-id="8" data-name="Report Format" data-toggle="modal" data-target="#formModal">
             <%= render 'shared/upload_icon' %>
           </a>
         </div>
         <div class="col-12 tile-body justify-content-between align-items-center" id="collapse-9">
           <p class="desc">Help other analysts by letting them know the easiest way to clean their data!</p>
-          <p class="placeholder-link text-center" data-id="9">
-            LinkedIn share button here
-          </p>
+          <a class="mx-auto" id="text-share" href="https://www.linkedin.com/sharing/share-offsite/?url=https://csv-cleaner.herokuapp.com" data-id="9">
+             <%= render 'shared/btn_share' %>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="modal-1Label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content m-4">
-      <div class="modal-header">
-        <h3 class="modal-title mb-5" id="truncateDataModalTitle">Algorithm: <span id="modal-title"></span></h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <%= render 'shared/modal_file_uploader' %>
-    </div>
-  </div>
-</div>
+<!-- Hidden upload form -->
+<form id="new_task" novalidate="novalidate" enctype="multipart/form-data" action="/tasks" accept-charset="UTF-8" method="post" hidden>
+      <input type="file" name="task[file]" id="task_file" hidden/>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="hidden" name="task[algorithm]" id="task_algorithm" />
+      <input type="submit" id="task_submit"/>
+</form>
 
 <script>
- const buttons = document.querySelectorAll('.modal-form-btn')
- const input = document.querySelector("#task_algorithm")
- const modalTitle = document.querySelector('#modal-title')
+ const buttons = document.querySelectorAll('.upload_icon')
  buttons.forEach((btn) => {
-   btn.addEventListener('click', (e)=>{
-      const title = e.currentTarget.dataset.name
-      const id =  e.currentTarget.dataset.id
-      console.log(title)
-      modalTitle.innerText = title
-      input.value= id
-   })
+   btn.addEventListener('click', (e) => {
+      const id = e.currentTarget.dataset.id
+      const input = document.getElementById('task_file')
+      const algorithm = document.getElementById('task_algorithm')
+      algorithm.value = id
+      const submit = document.getElementById('task_submit')
+      input.click();
+
+      input.onchange = e => {
+        submit.click();
+      }
+
+    })
  })
 </script>
