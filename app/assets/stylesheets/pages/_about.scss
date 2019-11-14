@@ -1,15 +1,10 @@
-//Specific CSS for your about page
-
-// .container.about {
-//    background-image: image-url("about_background-1.jpg");
-//  　background-attachment: fixed;
-// }
-
 .card {
 	width: auto;
 	max-height: auto;
 	background-color: #f4f4f4;
 	object-fit: cover;
+	overflow: hidden;
+
 }
 
 .card-img-top{
@@ -35,5 +30,31 @@
 }
 
 .image_section1 {
-	border-radius: 10px;
+	border-radius: 25px;
+
+}
+
+.image_section2 {
+	border-radius:30px;
+}
+
+.learnmore {
+	background-color:#15aabf !important;
+	color:#ffffff !important;
+}
+
+.each_member_link {
+	color:#15aabf;
+
+}
+
+.card-img-top {
+ 	height: 215.5px;
+ 	width: 100%;
+ }
+
+
+.card-img-top:hover {
+    transform: scale(1.1, 1.1);
+    opacity: 0.5;
 }
