@@ -9,8 +9,8 @@
     <h2 class="pop-header mb-5">Log into your account</h2>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), remote: true) do |f| %>
       <%= f.error_notification %>
-      <div class="errors"></div>
-      <div class="form-inputs">
+      <div class="errors msg"></div>
+      <div class="form-inputs mt-4">
         <%= f.input :email,
                     required: true,
                     autofocus: true,
