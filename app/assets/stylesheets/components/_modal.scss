@@ -8,6 +8,36 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.modal-title {
+.pop-header {
+  color: #15aabf;
+}
 
+.pop-alt1 {
+  color: #7FD0DC;
+}
+
+.pop-alt2 {
+  color: #95afba;
+}
+
+#social-media-signup {
+  font-size: 18px;
+  color: #95afba;
+  text-decoration: none;
+  margin: 2%;
+}
+
+#social-media-signup:visited {
+  text-decoration: none;
+}
+
+#social-media-signup:hover {
+  text-decoration: none;
+  color: #15aabf;
+  opacity: 1;
+}
+
+#social-media-signup:active {
+  text-decoration: none;
+  opacity: 1;
 }
