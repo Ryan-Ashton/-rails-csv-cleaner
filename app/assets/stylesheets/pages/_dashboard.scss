@@ -15,7 +15,7 @@
 #dash-main-card {
   // z-index: 1;
   margin-bottom: 6%;
-  padding: 2%;
+  padding: 4% 2%;
   border-radius: 10px;
   background-color: #f4f4f4;
   opacity: 0.8;
@@ -23,9 +23,9 @@
   // background-image: linear-gradient(300deg, #83ccd9, rgba(21,170,191,1));
 }
 
-.graph-card {
-  // height: 46%;
-  margin: 4% 0 8% 0;
+.line-graph-card {
+  height: 40%;
+  margin: 0 4% 4% 0;
   padding: 2%;
   border-radius: 4px;
   background-color: rgba(244, 244, 244, 1);
@@ -33,8 +33,19 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+.bar-chart-card {
+  display: flex;
+  align-self: flex-end;
+  height: 40vh;
+  margin: 0 4% 4% 0;
+  padding: 2%;
+  border-radius: 4px;
+  background-color: rgba(244, 244, 244, 1);
+  // opacity: 0.;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
 .pie-chart {
-  height: 60vh;
+  // height: 100%;
   margin: 4% 0;
   padding: 2%;
   border-radius: 4px;
@@ -130,6 +141,13 @@
   justify-content: center;
 }
 
+#my-list {
+  margin: 6% 0 4% 0;
+}
+
+// #container-chart {
+//   margin-left: 4%;
+// }
 // #rating-js {
 //   transition: height 1s, width 1s, padding 1s, visibility 1s, opacity 0.5s ease-out;
 // }
