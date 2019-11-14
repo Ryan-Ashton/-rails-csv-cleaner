@@ -64,7 +64,7 @@
       </div>
       <div class="col-12">
         <% unless @task.nil?  %>
-          <h3>Your most used algorithms</h3>
+          <h3>The Top 3 Algorithms for All Users</h3>
           <!-- Replace skeleton below with working code: -->
           <% counter = Hash.new 0 %>
           <% @user_tasks.each { |task| counter[task.algorithm.name] += 1} %>

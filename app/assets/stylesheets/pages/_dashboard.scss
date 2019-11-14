@@ -8,7 +8,7 @@
   border-radius: 10px;
   background-color: #f4f4f4;
   opacity: 0.8;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   // z-index: 1;
 }
 
@@ -19,7 +19,7 @@
   border-radius: 10px;
   background-color: #f4f4f4;
   opacity: 0.8;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   // background-image: linear-gradient(300deg, #83ccd9, rgba(21,170,191,1));
 }
 
@@ -28,8 +28,9 @@
   margin: 4% 0 8% 0;
   padding: 2%;
   border-radius: 4px;
-  background-color: #ffffff;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: rgba(244, 244, 244, 1);
+  // opacity: 0.;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .pie-chart {
@@ -44,10 +45,10 @@
   margin: 2% 0;
   padding: 2%;
   border-radius: 4px;
-  background-image: linear-gradient(300deg, #83ccd9, rgba(21,170,191,1));
+  background-image: linear-gradient(300deg, #83ccd9, rgba(21, 170, 191, 1));
   // opacity:0.8;
   color: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .dash-rating {
