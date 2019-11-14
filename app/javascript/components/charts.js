@@ -12,8 +12,8 @@ const charts = () => {
       labels: fileName,
           datasets: [
               {
-                  fillColor: "#15aabf",
-                  strokeColor: "#15aabf",
+              borderColor: "rgba(21, 170, 191, 1)",
+              backgroundColor: 'rgba(21, 170, 191, 0.25)',
                   data: fileSizes
               }
           ]
@@ -25,17 +25,23 @@ const charts = () => {
       scales: {
         xAxes: [{
           ticks: {
+            fontColor: 'black',
+            fontFamily: 'roboto',
             beginAtZero: true
         },
           display: true,
           scaleLabel: {
             display: true,
-            labelString: 'File Size'},
+            labelString: 'File Size (Bytes)'},
             gridLines: {
                 display:false
             }
         }],
         yAxes: [{
+          ticks: {
+            fontColor: 'black',
+            fontFamily: 'roboto'
+          },
             gridLines: {
                 display:false
             }
@@ -87,8 +93,8 @@ const charts = () => {
       labels: fileCountPerDay,
           datasets: [
               {
-                  fillColor: "#15aabf",
-                  strokeColor: "#15aabf",
+              borderColor: "rgba(21, 170, 191, 1)",
+              backgroundColor: 'rgba(21, 170, 191, 0.1)',
                   data: dayPerFile
               }
           ]
@@ -100,7 +106,9 @@ const charts = () => {
       scales: {
         xAxes: [{
           ticks: {
-            beginAtZero: true
+            beginAtZero: true,
+            fontColor: 'black',
+            fontFamily: 'roboto'
         },
           display: true,
           scaleLabel: {
@@ -112,7 +120,9 @@ const charts = () => {
         }],
         yAxes: [{
           ticks: {
-          precision:0
+          precision:0,
+          fontColor: 'black',
+          fontFamily: 'roboto'
           },
             gridLines: {
                 display:false
@@ -156,7 +166,8 @@ const charts = () => {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
     // Algorithms Used
-
+      Chart.defaults.global.defaultFontColor = 'black';
+      Chart.defaults.global.defaultFontFamily = 'roboto';
       const rowsAlgoChart = document.getElementById('AlgoChart');
       const algorithm = JSON.parse(rowsAlgoChart.dataset.algorithmName);
       const algorithmLabels = algorithm.map(key => Object.keys(key)[0]);
@@ -167,17 +178,19 @@ const charts = () => {
         var algoChart = new Chart(ctx2, {
           type: 'pie',
           data: {
-              labels: algorithmLabels,
+            labels: algorithmLabels,
             datasets: [{
             backgroundColor: [ /* backgroundColor is mandatory */
-                "#2ecc71",
-                "#3498db",
-                "#95a5a6",
-                "#9b59b6",
-                "#f1c40f",
-                "#e74c3c",
-                "#34495e"
+                "rgba(84, 193, 208, 1)",
+                "rgba(250, 146, 185, 1)",
+                "rgba(174, 207, 223, 1)",
+                "rgba(159, 159, 173, 1)",
+                "rgba(252, 230, 145, 1)",
+                "rgba(218, 158, 225, 1)",
+                "rgba(125, 130, 184, 1)",
+                "rgba(233, 244, 196, 1)"
             ],
+            
                 data: algorithmCount
         }]
           }
