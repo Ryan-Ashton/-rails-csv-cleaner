@@ -33,7 +33,7 @@ const charts = () => {
           display: true,
           scaleLabel: {
             display: true,
-            labelString: 'File Size (Bytes)'},
+            labelString: 'File Size (KB)'},
             gridLines: {
                 display:false
             }
@@ -102,6 +102,8 @@ const charts = () => {
       };
 
     var opt1 = {
+      // responsive: true,
+      // maintainAspectRatio: false,
       events: true,
       legend: false,
       scales: {
@@ -192,7 +194,7 @@ const charts = () => {
                 "rgba(125, 130, 184, 1)",
                 "rgba(233, 244, 196, 1)"
             ],
-            
+
                 data: algorithmCount
         }]
           }

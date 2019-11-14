@@ -48,22 +48,23 @@
   <% end %>
   <% if !@task.nil? %>
     <div class="row justify-content-between" id="dash-main-card">
-      <div class="col-lg-4 col-md-12">
-        <div class="graph-card">
+      <div class="col-lg-5 col-md-12">
+        <div class="line-graph-card">
           <canvas id="UploadsChart" data-file-loaded-time="<%= @data_loaded.to_json %>"></canvas>
           <script src='Chart.min.js'></script>
         </div>
-        <div class="graph-card">
-          <canvas id="RowsChart" data-file-sizes="<%= @file_sizes %>" data-titles="<%= @file_names %>"></canvas>
+        <div class="bar-chart-card">
+          <canvas id="RowsChart" style="height: 100%; display: block; width: 100%;" data-file-sizes="<%= @file_sizes %>" data-titles="<%= @file_names %>"></canvas>
             <script src='Chart.min.js'></script>
         </div>
       </div>
-      <div class="col-lg-8 col-md-12">
+      <div class="col-lg-7 col-md-12 mx-auto">
+        <h3>Your Algorithms Usage</h3>
         <div class="pie-chart">
           <canvas id="AlgoChart" data-algorithm-name="<%= @algorithm_used.to_json %>"></canvas>
             <script src='Chart.min.js'></script>
         </div>
-        <div class="col-12">
+        <div class="col-12" id="my-list">
           <% unless @task.nil?  %>
             <h3>Your Top 3 Algorithms</h3>
             <!-- Replace skeleton below with working code: -->
