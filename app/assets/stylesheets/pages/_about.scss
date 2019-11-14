@@ -5,19 +5,9 @@
 //  　background-attachment: fixed;
 // }
 
-.card {
-	width: auto;
-	max-height: auto;
-	background-color: #f4f4f4;
-	object-fit: cover;
-}
 
 .card-img-top{
     object-fit: cover;
-}
-
-.card-body {
-	color: black;
 }
 
 .btn {
@@ -36,4 +26,5 @@
 
 .image_section1 {
 	border-radius: 10px;
+  margin: 4%;
 }
