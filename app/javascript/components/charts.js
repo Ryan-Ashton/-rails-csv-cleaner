@@ -1,5 +1,6 @@
 import "chart.js";
 
+
 const charts = () => {
   if (window.location.pathname == '/dashboard') {
 /////////////////////////////////////////////////////////////////////////////

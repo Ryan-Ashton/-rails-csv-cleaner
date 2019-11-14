@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2019_11_13_061959) do
     t.datetime "updated_at", null: false
     t.string "file"
     t.boolean "downloaded", default: false
-    t.integer "filesize"
+    t.float "filesize"
     t.index ["algorithm_id"], name: "index_tasks_on_algorithm_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
