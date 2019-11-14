@@ -18,14 +18,14 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   get 'about', to: "pages#about", as: :about
-  get 'faq', to: "pages#faq", as: :faq
+  get 'privacy', to: "pages#privacy", as: :privacy
   get 'dashboard', to: "pages#dashboard", as: :dashboard
   resources :tasks , only: [:create, :index, :show] do
     resources :feedbacks
   end
   resources :algorithms, only: [:index, :show]
 
-devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", sessions: "users/sessions" }
+devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", sessions: "users/sessions" } #, registrations: "users/registrations"
 get '/auth/:provider/callback', to: 'oauth#callback', as: 'oauth_callback'
 get '/auth/failure', to: 'oauth#failure', as: 'oauth_failure'
 post 'tasks/:id/download', to: 'tasks#download', as: :download
