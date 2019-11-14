@@ -168,6 +168,7 @@ const charts = () => {
     // Algorithms Used
       Chart.defaults.global.defaultFontColor = 'black';
       Chart.defaults.global.defaultFontFamily = 'roboto';
+      Chart.defaults.global.legend.position = "right";
       const rowsAlgoChart = document.getElementById('AlgoChart');
       const algorithm = JSON.parse(rowsAlgoChart.dataset.algorithmName);
       const algorithmLabels = algorithm.map(key => Object.keys(key)[0]);
