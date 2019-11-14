@@ -1,11 +1,12 @@
 import "chart.js";
 
+
 const charts = () => {
   if (window.location.pathname == '/dashboard') {
 /////////////////////////////////////////////////////////////////////////////
     // Number of Rows Chart
     const rowsChartCanvas = document.getElementById('RowsChart');
-    const fileSizes = JSON.parse(rowsChartCanvas.dataset.fileSizes);
+    const fileSizes = JSON.parse([rowsChartCanvas.dataset.fileSizes]);
     const fileName = JSON.parse(rowsChartCanvas.dataset.titles);
 
     var rowChartData = {

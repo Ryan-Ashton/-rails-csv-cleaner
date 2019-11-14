@@ -15,13 +15,13 @@ class TasksController < ApplicationController
     @task.algorithm = @algorithm
     @task.file = params[:task][:file]
     @task.user = current_user
-    @task.filesize = params[:task][:file].tempfile.size
+    @task.filesize = params[:task][:file].tempfile.size.fdiv(1024).round(2)
     @task.title = params[:task][:file].original_filename # Ryan Attempt
-    
+
 
     if @task.save
       csv_data = nil
-      
+
 
       if @task.algorithm_id == 1
         csv_data = FileConverter.new(@task.file).missing_random_data
@@ -57,7 +57,7 @@ class TasksController < ApplicationController
       flash[:alert] = @task.errors.full_messages
       redirect_to root_path
     end
-    
+
   end
 
   def new
